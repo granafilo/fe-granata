@@ -6,3 +6,7 @@ console.log("Filippo Granata")
 
 console.log("Filippo Granata\nHo 21 anni\nGaggiano (Mi)")
 
+// Esercizio 1.3
+
+console.log(`${15+27}\n${100-58}\n${7*8}\n${144/12}`);
+
