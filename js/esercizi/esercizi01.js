@@ -32,3 +32,9 @@ console.log("Sono nato a Milano e frequento un ITS");
 
 console.log("Filippo\nFilippo\nFilippo\nFilippo\nFilippo");
 
+// Esercizio 1.8
+
+console.log("******************************")
+console.log("            Filippo           ")
+console.log("******************************")
+
