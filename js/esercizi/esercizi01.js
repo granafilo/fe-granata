@@ -14,3 +14,12 @@ console.log(`${15+27}\n${100-58}\n${7*8}\n${144/12}`);
 
 console.log("Ciao","come","va");
 
+// Esercizio 1.5
+
+// Commento su una riga
+
+/* Commento
+ su più righe */
+
+console.log("Esercizio 1.5");
+
