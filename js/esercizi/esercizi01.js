@@ -56,3 +56,7 @@ console.log((10+5)*2)
 
 // Cambia l'importanza delle operazioni
 
+// Esercizio 1.11
+
+console.log(0.1+0.2)
+// La somma risulta "sporca"
