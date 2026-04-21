@@ -38,3 +38,14 @@ console.log("******************************")
 console.log("            Filippo           ")
 console.log("******************************")
 
+// Esercizio 1.9
+
+
+console.log("======================")
+console.log("RICEVUTA DI PAGAMENTO")
+console.log("======================")
+console.log("Prodotto: Estathè")
+console.log("Quantità: 1")
+console.log("Prezzo: 0.99€")
+console.log("======================")
+
