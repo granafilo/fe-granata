@@ -1,0 +1,18 @@
+{
+  "name": "fe-granata",
+  "version": "0.0.0",
+  "description": "Primo progetto node con JS",
+  "main": "main.js",
+  "scripts": {
+    "start" : "node js/main.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "tiramisu"
+  ],
+  "author": "granafilo (Filippo Granata)",
+  "license": "ISC",
+  "volta": {
+    "node": "24.15.0"
+  }
+}
