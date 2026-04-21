@@ -23,3 +23,8 @@ console.log("Ciao","come","va");
 
 console.log("Esercizio 1.5");
 
+// Esercizio 1.6
+
+console.log("Ciao, mi chiamo Filippo e ho 21 anni");
+console.log("Sono nato a Milano e frequento un ITS");
+
