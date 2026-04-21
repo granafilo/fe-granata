@@ -49,3 +49,10 @@ console.log("Quantità: 1")
 console.log("Prezzo: 0.99€")
 console.log("======================")
 
+// Esercizio 1.10
+
+console.log((10+5*2))
+console.log((10+5)*2)
+
+// Cambia l'importanza delle operazioni
+
