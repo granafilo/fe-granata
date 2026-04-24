@@ -103,4 +103,11 @@ console.log(Boolean(null));
 console.log(Boolean(undefined));
 console.log(Boolean(NaN));
 
+// Esercizio 2.13
+const PI = Math.PI;
+let raggio = 4;
 
+let area = PI * Math.pow(2, raggio);
+let circonferenza = 2 * raggio * PI;
+
+console.log(area.toFixed(3), circonferenza.toFixed(3));
