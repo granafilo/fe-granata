@@ -165,3 +165,14 @@ let peso = 71;
 let altezza = 1.74;
 let BMI = peso / Math.pow(2, altezza);
 console.log(BMI);
+
+// Esercizio 2.20
+const PROVA = 2;
+// PROVA = 4;
+
+// Errore: "Assignment to constant variable"
+
+const ARRAY = [2,4,6,1,7,2,9];
+ARRAY[4] = 10;
+
+// Nessun Errore; Non viene modificato l'array, ma ciò a cui punta
