@@ -69,7 +69,7 @@ nome = "filippo";
 let cognome = "granata";
 eta = 21;
 
-console.log("Ciao mi chiamo", nome , cognome , "ho" , eta, "anni!");
+console.log(`Ciao mi chiamo ${nome} nome ${cognome} ho ${eta} anni!`);
 
 // Esercizio 2.9
 let secondi = 3661;
@@ -90,3 +90,7 @@ console.log(a,b);
 
 [a,b] = [b,a];
 console.log(a,b);
+
+// Esercizio 2.11
+a = 10;
+console.log(Boolean(a % 2 == 0 ));
