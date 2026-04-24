@@ -54,3 +54,12 @@ console.log(false + "ciao");
 // prevedo output pari a "0ciao"
 // risultato "falseciao"
 
+// Esercizio 2.7
+let eta = 17;
+let haPermesso = true;
+
+if(eta >= 18 || haPermesso){
+    console.log(true);
+}else{
+    console.log(false);
+}
