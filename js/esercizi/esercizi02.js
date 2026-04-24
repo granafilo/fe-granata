@@ -151,3 +151,12 @@ console.log(null === undefined);
 let l1 = 10, l2 = 10, l3 = 10;
 
 console.log(Boolean((l1 + l2 > l3 || l1+ l3 > l2 || l2+l3 > l1)));
+
+// Esercizio 2.18
+let numero = 472;
+
+
+console.log("Centinaia : ", Math.floor(numero / 100));
+console.log("Decine : ", Math.floor(numero % 100 / 10));
+console.log("Unità : " , numero % 10);
+
