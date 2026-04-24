@@ -44,3 +44,15 @@ const fattoriale = (a) => {
 };
 
 console.log(fattoriale(6));
+
+// Esercizio 4.7
+
+const contaVocali = (str) => {
+    let count = 0;
+    for(let i = 0; i < str.length; i++){
+        if(str.charAt(i).match(/[aeiou]/gi)){
+            count++;
+        }
+    }
+    return count;
+};
