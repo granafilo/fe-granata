@@ -126,3 +126,24 @@ ore = Math.floor(minuti/60);
 minuti = minuti%60;
 
 console.log(`Ore: ${ore} Minuti: ${minuti}`);
+
+// Esercizio 2.16
+console.log(typeof(typeof(42)));
+// prevedo che esca "string"
+
+console.log("3" + 4 + 5);
+// Concatenazione di stringhe = "345"
+
+console.log("" == false);
+// prevedo che esca true
+
+console.log("" === false);
+// prevedo che esca false
+
+console.log(null == undefined);
+// prevedo che esca false
+// Risultato = true;
+
+console.log(null === undefined);
+// prevedo che esca false
+
