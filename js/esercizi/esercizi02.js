@@ -191,3 +191,8 @@ let fahrenheit = (celsius * 9/5) + 32;
 let kelvin = celsius + 273.15;
 
 console.log(celsius, fahrenheit, kelvin);
+
+// Esercizio 2.23
+let char = "a";
+
+console.log(char.toLowerCase() == "a" || char.toLowerCase() == "e" || char.toLowerCase() == "i" || char.toLowerCase() == "o" || char.toLowerCase() == "u" ? "Vocale" : "Consonante");
