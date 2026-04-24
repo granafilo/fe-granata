@@ -119,3 +119,10 @@ let sterline = euro * 0.87;
 let yen = euro * 186.69;
 
 console.log(euro, dollari, sterline, yen);
+
+// Esercizio 2.15
+minuti = 250;
+ore = Math.floor(minuti/60);
+minuti = minuti%60;
+
+console.log(`Ore: ${ore} Minuti: ${minuti}`);
