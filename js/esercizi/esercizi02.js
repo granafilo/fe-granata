@@ -176,3 +176,11 @@ const ARRAY = [2,4,6,1,7,2,9];
 ARRAY[4] = 10;
 
 // Nessun Errore; Non viene modificato l'array, ma ciò a cui punta
+
+// Esercizio 2.21
+let km = 500;
+let consumo = 15; 
+let prezzoCarburante = 2.12;
+
+let costo = (km/consumo)*prezzoCarburante;
+console.log(costo);
