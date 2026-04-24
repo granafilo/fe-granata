@@ -4,3 +4,11 @@ const annoNascita = "2004";
 
 console.log(nome, annoNascita);
 
+// Esercizio 2.2
+let a,b;
+console.log((a+b));
+console.log(a-b);
+console.log(a*b);
+console.log(a/b);
+
+
