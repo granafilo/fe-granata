@@ -63,3 +63,11 @@ if(eta >= 18 || haPermesso){
 }else{
     console.log(false);
 }
+
+// Esercizio 2.8
+nome = "filippo";
+let cognome = "granata";
+eta = 21;
+
+console.log("Ciao mi chiamo", nome , cognome , "ho" , eta, "anni!");
+
