@@ -196,3 +196,16 @@ console.log(celsius, fahrenheit, kelvin);
 let char = "a";
 
 console.log(char.toLowerCase() == "a" || char.toLowerCase() == "e" || char.toLowerCase() == "i" || char.toLowerCase() == "o" || char.toLowerCase() == "u" ? "Vocale" : "Consonante");
+
+// Esercizio 2.24
+let numInt = 1;
+let numCifre = 1;
+
+let check = 10;
+
+while (Math.floor(numInt / check) != 0) {
+    check *= 10;
+    numCifre++;
+}
+
+console.log(numCifre);
