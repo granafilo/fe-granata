@@ -111,3 +111,11 @@ let area = PI * Math.pow(2, raggio);
 let circonferenza = 2 * raggio * PI;
 
 console.log(area.toFixed(3), circonferenza.toFixed(3));
+
+// Esercizio 2.14
+let euro = 3.14;
+let dollari = euro*1.17;
+let sterline = euro * 0.87;
+let yen = euro * 186.69;
+
+console.log(euro, dollari, sterline, yen);
