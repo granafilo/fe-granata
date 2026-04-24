@@ -83,3 +83,10 @@ console.log("ore",ore, "minuti", minuti, "secondi", secondi);
 // controllo che il calcolo sia corretto
 console.log(ore*60*60 + minuti*60 + secondi);
 
+// Esercizio 2.10
+a = 9;
+b = 10;
+console.log(a,b);
+
+[a,b] = [b,a];
+console.log(a,b);
