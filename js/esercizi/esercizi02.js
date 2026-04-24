@@ -147,3 +147,7 @@ console.log(null == undefined);
 console.log(null === undefined);
 // prevedo che esca false
 
+// Esercizio 2.17
+let l1 = 10, l2 = 10, l3 = 10;
+
+console.log(Boolean((l1 + l2 > l3 || l1+ l3 > l2 || l2+l3 > l1)));
