@@ -19,3 +19,17 @@ let prezzoScontato = prezzo - (prezzo * SCONTO / 100);
 
 console.log(prezzoScontato);
 
+// Esercizio 2.4
+let intero = 19;
+let stringa = "Ciao";
+let und = undefined;
+let nullo = null;
+let bool = true;
+console.log(typeof(intero));
+console.log(typeof(stringa));
+console.log(typeof(und));
+console.log(typeof(nullo));
+console.log(typeof(bool));
+
+
+
