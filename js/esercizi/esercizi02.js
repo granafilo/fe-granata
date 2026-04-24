@@ -160,3 +160,8 @@ console.log("Centinaia : ", Math.floor(numero / 100));
 console.log("Decine : ", Math.floor(numero % 100 / 10));
 console.log("Unità : " , numero % 10);
 
+// Esercizio 2.19
+let peso = 71;
+let altezza = 1.74;
+let BMI = peso / Math.pow(2, altezza);
+console.log(BMI);
