@@ -71,3 +71,15 @@ eta = 21;
 
 console.log("Ciao mi chiamo", nome , cognome , "ho" , eta, "anni!");
 
+// Esercizio 2.9
+let secondi = 3661;
+let minuti = Math.floor(secondi/60);
+secondi = secondi % 60;
+// console.log(minuti, secondi);
+let ore = Math.floor(minuti/60);
+minuti = minuti % 60;
+
+console.log("ore",ore, "minuti", minuti, "secondi", secondi);
+// controllo che il calcolo sia corretto
+console.log(ore*60*60 + minuti*60 + secondi);
+
