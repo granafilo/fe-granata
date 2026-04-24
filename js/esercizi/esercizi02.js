@@ -36,3 +36,21 @@ console.log(typeof(bool));
 stringa = "123";
 stringa = parseInt(stringa);
 console.log((stringa+7));
+
+// Esercizio 2.6
+console.log("5" + 3);
+// prevedo output pari a "53"
+
+console.log("5" - 3);
+// prevedo output pari a "2" 
+
+console.log("5" * "2");
+// prevedo output pari a "10"
+
+console.log(true + 1);
+// prevedo output pari a "2"
+
+console.log(false + "ciao");
+// prevedo output pari a "0ciao"
+// risultato "falseciao"
+
