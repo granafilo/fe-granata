@@ -32,4 +32,7 @@ console.log(typeof(nullo));
 console.log(typeof(bool));
 
 
-
+// Esercizio 2.5
+stringa = "123";
+stringa = parseInt(stringa);
+console.log((stringa+7));
