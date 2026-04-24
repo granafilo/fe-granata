@@ -26,3 +26,8 @@ const massimo = (a,b,c) => {
 
 console.log(massimo(1,8,12));
 
+// Esercizio 4.5
+
+const isPari = (a) => {
+    return a % 2 == 0 ? true : false;
+};
