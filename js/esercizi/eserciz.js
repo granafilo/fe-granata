@@ -18,4 +18,11 @@ const celciusToFahenheit = (gradi) => {
     return gradi * 9/5 + 32;
 }
 
+// Esercizio 4.4
+
+const massimo = (a,b,c) => {
+    return Math.max(a,b,c);
+}
+
+console.log(massimo(1,8,12));
 
