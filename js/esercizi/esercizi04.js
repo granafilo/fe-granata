@@ -169,12 +169,12 @@ console.log(minMax(8, 6, 2));
 const tronca = (num, dec = 1) => {
     //Converto il numero in una stringa
     let stringa = num.toString() || "";
-    
+
     // Ricavo il numero di cifre decimali
     let numeroDecimali = stringa.split(".")[1].length;
-    
+
     // Ritorno come float il numero coi decimali formattati
-    return parseFloat(stringa.substring(0,stringa.length - numeroDecimali + dec));
+    return parseFloat(stringa.substring(0, stringa.length - numeroDecimali + dec));
 };
 
 
@@ -187,12 +187,30 @@ console.log(
 const ripetiFino = (str, len) => {
     let stringaRipetuta = "";
     let i = 0;
-    while(i < len){
+    while (i < len) {
         stringaRipetuta += str.charAt(i++ % str.length);
-        
+
     }
 
     return stringaRipetuta;
 };
 
 console.log(ripetiFino("abc", 7));
+
+// Esercizio 4.18
+
+const sommaDigiti = (num) => {
+
+    let numStr = num.toString();
+
+    // Caso termine, lunghezza stringa pari a 1
+    if (numStr.length == 1) {
+        return parseFloat(numStr);
+    } else {
+        let numSub = numStr.substring(0, 1);
+        let numSli = numStr.slice(1);
+        return parseFloat(numSub) + sommaDigiti(parseFloat(numSli));
+    }
+};
+
+console.log(sommaDigiti(153));
