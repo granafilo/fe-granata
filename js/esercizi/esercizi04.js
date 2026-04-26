@@ -120,3 +120,16 @@ const creaContatore = () => {
     };
 };
 
+// Esercizio 4.14
+
+const sommaFinoA = (N) => {
+    if(N == 1){
+        return 1;
+    }else{
+        return (N + sommaFinoA(N-1));
+    }
+};
+
+console.log(sommaFinoA(4));
+
+
