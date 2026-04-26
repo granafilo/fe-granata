@@ -162,4 +162,21 @@ const minMax = (...params) => {
 
 };
 
-console.log( minMax(8, 6, 2));
+console.log(minMax(8, 6, 2));
+
+// Esercizio 4.16
+
+const tronca = (num, dec = 1) => {
+    //Converto il numero in una stringa
+    let stringa = num.toString() || "";
+    
+    // Ricavo il numero di cifre decimali
+    let numeroDecimali = stringa.split(".")[1].length;
+    
+    // Ritorno come float il numero coi decimali formattati
+    return parseFloat(stringa.substring(0,stringa.length - numeroDecimali + dec));
+};
+
+
+console.log(
+    tronca(16.17156513235, 5));
