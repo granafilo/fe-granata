@@ -380,6 +380,8 @@ console.log(curry(somma)(3)(4));
 
 // Esercizio 4.27
 
+// ????????????????????????????????????????
+
 const ceasarCipher = (str, spost) => {
     let strCifrata = "";
     for(i in str){
@@ -396,3 +398,9 @@ const ceasarCipher = (str, spost) => {
 };
 
 console.log(ceasarCipher("Ciao", 13));
+
+// Esercizio 4.28
+
+const convalidaCF = (CF) => {
+    return CF.match(/^[A-Z]{6}[0-9]{2}[A-Z][0-9]{2}[A-Z][0-9]{3}[A-Z]$/gi) ? true : false;
+};
