@@ -214,3 +214,39 @@ const sommaDigiti = (num) => {
 };
 
 console.log(sommaDigiti(153));
+
+//Esercizio 4.19
+
+const convertiTemperatura = (valore = 0, uniP = "C", uniA = "F") => {
+    switch (uniA) {
+        case "C":
+            if (uniP == "C") {
+                return valore;
+            } else if (uniP == "F") {
+                return (valore - 32) * 9 / 5;
+            } else {
+                return valore - 273.15;
+            }
+            break;
+        case "F":
+            if (uniP == "C") {
+                return (valore * 9 / 5) + 32;
+            } else if (uniP == "F") {
+                return valore;
+            } else {
+                return (valore - 273.15) * 9 / 5 + 32;
+            }
+            break;
+        case "k":
+            if (uniP == "C") {
+                return valore + 273.15;
+            } else if (uniP == "F") {
+                return (valore - 32) * 5/9 + 273.15 ;                
+            } else {
+                return valore;
+            }
+            break;
+    }
+};
+
+console.log(convertiTemperatura(0,"C", "F"));
