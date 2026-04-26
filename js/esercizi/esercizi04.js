@@ -339,3 +339,15 @@ const isPangram = (str) => {
 };
 
 console.log(isPangram("abcdefghilmknopqrstuvwxyzj"));
+
+// Esercizio 4.24
+
+const fibonacci = (N) => {
+    if(N == 1){
+        return 1;
+    }else{
+        return N + fibonacci(N-1);
+    }
+};
+
+console.log(fibonacci(4));
