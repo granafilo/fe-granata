@@ -90,3 +90,8 @@ const invertiStringa = (str = "") => {
 
 console.log(invertiStringa("Ciao"));
 
+// Esercizio 4.11
+
+const applicaDue = (num, fun1, fun2) => {
+    return fun2(fun1(num));
+};
