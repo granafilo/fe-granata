@@ -49,8 +49,8 @@ console.log(fattoriale(6));
 
 const contaVocali = (str) => {
     let count = 0;
-    for(let i = 0; i < str.length; i++){
-        if(str.charAt(i).match(/[aeiou]/gi)){
+    for (let i = 0; i < str.length; i++) {
+        if (str.charAt(i).match(/[aeiou]/gi)) {
             count++;
         }
     }
@@ -60,8 +60,8 @@ const contaVocali = (str) => {
 // Esercizio 4.8
 const isPrimo = (num) => {
     let primo = true;
-    for(let i = 2; i < num && primo; i++){
-        if(num % i == 0){
+    for (let i = 2; i < num && primo; i++) {
+        if (num % i == 0) {
             primo = false;
             continue;
         }
@@ -73,7 +73,7 @@ const isPrimo = (num) => {
 
 // Esercizio 4.9
 
-const potenza = (base,exp = 2) => {
+const potenza = (base, exp = 2) => {
     return Math.pow(base, exp);
 };
 
@@ -82,7 +82,7 @@ const potenza = (base,exp = 2) => {
 // Esercizio 4.10
 const invertiStringa = (str = "") => {
     let strInvertita = "";
-    for(let i = str.length - 1; i >= 0; i--){
+    for (let i = str.length - 1; i >= 0; i--) {
         strInvertita += str.charAt(i);
     }
     return strInvertita;
@@ -99,7 +99,7 @@ const applicaDue = (num, fun1, fun2) => {
 // Esercizio 4.12
 
 const ripeti = (fun1, N) => {
-    for(let i = 0; i < N; i++){
+    for (let i = 0; i < N; i++) {
         fun1();
     }
 };
@@ -123,13 +123,43 @@ const creaContatore = () => {
 // Esercizio 4.14
 
 const sommaFinoA = (N) => {
-    if(N == 1){
+    if (N == 1) {
         return 1;
-    }else{
-        return (N + sommaFinoA(N-1));
+    } else {
+        return (N + sommaFinoA(N - 1));
     }
 };
 
 console.log(sommaFinoA(4));
 
+// Esercizio 4.15
 
+const minMax = (...params) => {
+    console.log(params);
+    let minMax = {
+        "min": undefined,
+        "max": undefined
+    };
+
+    for (i in params) {
+        if (i == 0) {
+            minMax.min = params[i];
+            minMax.max = params[i];
+        } else {
+            if (minMax.min > params[i]) {
+                minMax.min = params[i];
+            }
+            if (minMax.max < params[i]) {
+                minMax.max = params[i];
+            }
+        }
+
+    }
+
+    return minMax;
+
+    // console.log(minMax.min);
+
+};
+
+console.log( minMax(8, 6, 2));
