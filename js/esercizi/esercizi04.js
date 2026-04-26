@@ -308,7 +308,7 @@ const creaPassword = (numChar) => {
         '0', '1', '2', '3', '4', '5', '6', '7', '8', '9',
         '!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '_', '+', '-', '=', '[', ']', '{', '}', ';', ':', ',', '.', '<', '>', '?', '/'
     ];
-    
+
     for (let i = 0; i < numChar; i++) {
         let index = (Math.floor(Math.random() * caratteri.length));
 
@@ -319,3 +319,23 @@ const creaPassword = (numChar) => {
 };
 
 console.log(creaPassword(8));
+
+// Esercizio 4.23
+
+const isPangram = (str) => {
+    let char = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
+
+    for (c in char) {
+        for (c1 in str) {
+            if (str[c1].toUpperCase() == char[c]) {
+                break;
+            }else if(c1 == str.length-1){
+                return false;
+            }
+        }
+    }
+
+    return true;
+};
+
+console.log(isPangram("abcdefghilmknopqrstuvwxyzj"));
