@@ -280,3 +280,20 @@ const convalidaEmail = (str) => {
 };
 
 console.log(convalidaEmail("a@1."));
+
+
+// Esercizio 4.21
+
+const mcd = (num1,num2) => {
+    if(num2 === 0){
+        return num1;
+    }else{
+        return mcd(num2, (num1%num2));
+    }
+};
+
+const mcm = (num1, num2) => {
+    return (num1 * num2)/(mcd(num1,num2));
+};
+
+console.log(mcm(7,5));
