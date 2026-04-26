@@ -329,7 +329,7 @@ const isPangram = (str) => {
         for (c1 in str) {
             if (str[c1].toUpperCase() == char[c]) {
                 break;
-            }else if(c1 == str.length-1){
+            } else if (c1 == str.length - 1) {
                 return false;
             }
         }
@@ -343,10 +343,10 @@ console.log(isPangram("abcdefghilmknopqrstuvwxyzj"));
 // Esercizio 4.24
 
 const fibonacci = (N) => {
-    if(N == 1){
+    if (N == 1) {
         return 1;
-    }else{
-        return N + fibonacci(N-1);
+    } else {
+        return N + fibonacci(N - 1);
     }
 };
 
@@ -354,8 +354,26 @@ console.log(fibonacci(4));
 
 // Esercizio 4.25
 
-const compose = (f,g) => {
+// ??????????????????????????????????
+
+const compose = (f, g) => {
     return (x) => {
         return f(g(x));
     };
 };
+
+// Esercizio 4.26
+
+// ?????????????????????????????????????????
+
+const somma = (a,b) => a+b; 
+
+const curry = (f) => {
+    return (a) => {
+        return (b) => {
+            return f(a, b);
+        }
+    }
+};
+
+console.log(curry(somma)(3)(4));
