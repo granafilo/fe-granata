@@ -71,3 +71,10 @@ const isPrimo = (num) => {
 
 // console.log(isPrimo(3));
 
+// Esercizio 4.9
+
+const potenza = (base,exp = 2) => {
+    return Math.pow(base, exp);
+};
+
+// console.log(potenza(2, 5));
