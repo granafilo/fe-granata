@@ -241,7 +241,7 @@ const convertiTemperatura = (valore = 0, uniP = "C", uniA = "F") => {
             if (uniP == "C") {
                 return valore + 273.15;
             } else if (uniP == "F") {
-                return (valore - 32) * 5/9 + 273.15 ;                
+                return (valore - 32) * 5 / 9 + 273.15;
             } else {
                 return valore;
             }
@@ -249,7 +249,7 @@ const convertiTemperatura = (valore = 0, uniP = "C", uniA = "F") => {
     }
 };
 
-console.log(convertiTemperatura(0,"C", "F"));
+console.log(convertiTemperatura(0, "C", "F"));
 
 // Esercizio 4.20
 
@@ -259,24 +259,24 @@ const convalidaEmail = (str) => {
 
 
     //Senza regex
-    
+
     let atTrovato = {
-        "bool" : false,
-        "index" : 0
+        "bool": false,
+        "index": 0
     };
 
-    for(i in str){
-        if(str.charAt(i) === "@" && i != str.length && i != 0){
+    for (i in str) {
+        if (str.charAt(i) === "@" && i != str.length && i != 0) {
             atTrovato.bool = true;
             atTrovato.index = i;
         }
-        if(atTrovato.bool && str.charAt(i) === "." && atTrovato.index != i-1){
+        if (atTrovato.bool && str.charAt(i) === "." && atTrovato.index != i - 1) {
             return true;
         }
     }
 
     return false;
-    
+
 };
 
 console.log(convalidaEmail("a@1."));
@@ -284,16 +284,38 @@ console.log(convalidaEmail("a@1."));
 
 // Esercizio 4.21
 
-const mcd = (num1,num2) => {
-    if(num2 === 0){
+const mcd = (num1, num2) => {
+    if (num2 === 0) {
         return num1;
-    }else{
-        return mcd(num2, (num1%num2));
+    } else {
+        return mcd(num2, (num1 % num2));
     }
 };
 
 const mcm = (num1, num2) => {
-    return (num1 * num2)/(mcd(num1,num2));
+    return (num1 * num2) / (mcd(num1, num2));
 };
 
-console.log(mcm(7,5));
+console.log(mcm(7, 5));
+
+
+// Esercizio 4.22
+const creaPassword = (numChar) => {
+    let password = "";
+    const caratteri = [
+        'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z',
+        'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z',
+        '0', '1', '2', '3', '4', '5', '6', '7', '8', '9',
+        '!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '_', '+', '-', '=', '[', ']', '{', '}', ';', ':', ',', '.', '<', '>', '?', '/'
+    ];
+    
+    for (let i = 0; i < numChar; i++) {
+        let index = (Math.floor(Math.random() * caratteri.length));
+
+        password += caratteri[index];
+    }
+
+    return password;
+};
+
+console.log(creaPassword(8));
