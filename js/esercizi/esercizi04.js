@@ -250,3 +250,33 @@ const convertiTemperatura = (valore = 0, uniP = "C", uniA = "F") => {
 };
 
 console.log(convertiTemperatura(0,"C", "F"));
+
+// Esercizio 4.20
+
+const convalidaEmail = (str) => {
+    // Con regex
+    // return str.match(/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/) ? true : false;
+
+
+    //Senza regex
+    
+    let atTrovato = {
+        "bool" : false,
+        "index" : 0
+    };
+
+    for(i in str){
+        if(str.charAt(i) === "@" && i != str.length && i != 0){
+            atTrovato.bool = true;
+            atTrovato.index = i;
+        }
+        if(atTrovato.bool && str.charAt(i) === "." && atTrovato.index != i-1){
+            return true;
+        }
+    }
+
+    return false;
+    
+};
+
+console.log(convalidaEmail("a@1."));
