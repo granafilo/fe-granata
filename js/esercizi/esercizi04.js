@@ -103,3 +103,20 @@ const ripeti = (fun1, N) => {
         fun1();
     }
 };
+
+//Esercizio 4.13
+
+// ???????????????????????????
+
+
+// Ogni volta che chiamo creaContatore viene creato un creaContatore,
+// quando eseguo quel contatore appena creato, lui farà riferimento alla stessa variabile privata e la aumenterà
+
+const creaContatore = () => {
+    let count = 0;
+    return () => {
+        conteggio++;
+        return conteggio;
+    };
+};
+
