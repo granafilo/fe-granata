@@ -95,3 +95,11 @@ console.log(invertiStringa("Ciao"));
 const applicaDue = (num, fun1, fun2) => {
     return fun2(fun1(num));
 };
+
+// Esercizio 4.12
+
+const ripeti = (fun1, N) => {
+    for(let i = 0; i < N; i++){
+        fun1();
+    }
+};
