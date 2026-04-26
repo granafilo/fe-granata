@@ -180,3 +180,19 @@ const tronca = (num, dec = 1) => {
 
 console.log(
     tronca(16.17156513235, 5));
+
+
+// Esercizio 4.17
+
+const ripetiFino = (str, len) => {
+    let stringaRipetuta = "";
+    let i = 0;
+    while(i < len){
+        stringaRipetuta += str.charAt(i++ % str.length);
+        
+    }
+
+    return stringaRipetuta;
+};
+
+console.log(ripetiFino("abc", 7));
