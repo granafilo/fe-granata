@@ -56,3 +56,18 @@ const contaVocali = (str) => {
     }
     return count;
 };
+
+// Esercizio 4.8
+const isPrimo = (num) => {
+    let primo = true;
+    for(let i = 2; i < num && primo; i++){
+        if(num % i == 0){
+            primo = false;
+            continue;
+        }
+    }
+    return primo;
+};
+
+// console.log(isPrimo(3));
+
