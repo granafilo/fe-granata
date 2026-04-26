@@ -377,3 +377,22 @@ const curry = (f) => {
 };
 
 console.log(curry(somma)(3)(4));
+
+// Esercizio 4.27
+
+const ceasarCipher = (str, spost) => {
+    let strCifrata = "";
+    for(i in str){
+        let codice = str.charCodeAt(i);
+        if(codice >= 65 && codice <=90){
+            strCifrata += String.fromCharCode((str.charCodeAt(i) - 65 + spost) % 26 +65);
+        }else if(codice >= 97 && codice <= 122){
+            strCifrata += String.fromCharCode((str.charCodeAt(i) - 97 + spost) % 26 +97);
+        }
+        
+    }
+
+    return strCifrata;
+};
+
+console.log(ceasarCipher("Ciao", 13));
