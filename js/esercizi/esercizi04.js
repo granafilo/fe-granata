@@ -351,3 +351,11 @@ const fibonacci = (N) => {
 };
 
 console.log(fibonacci(4));
+
+// Esercizio 4.25
+
+const compose = (f,g) => {
+    return (x) => {
+        return f(g(x));
+    };
+};
