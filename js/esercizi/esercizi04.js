@@ -78,3 +78,15 @@ const potenza = (base,exp = 2) => {
 };
 
 // console.log(potenza(2, 5));
+
+// Esercizio 4.10
+const invertiStringa = (str = "") => {
+    let strInvertita = "";
+    for(let i = str.length - 1; i >= 0; i--){
+        strInvertita += str.charAt(i);
+    }
+    return strInvertita;
+};
+
+console.log(invertiStringa("Ciao"));
+
