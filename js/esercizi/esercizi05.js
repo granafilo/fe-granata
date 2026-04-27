@@ -40,6 +40,20 @@ console.log(maxArray(arrayNum))
 console.log("");
 // Esercizio 5.4
 console.log("Esercizio 5.4");
+
+const soloPari = (arrayNum) => {
+    let pari = [];
+
+    for (num of arrayNum){
+        if (num % 2 == 0) {
+            pari.push(num);
+        }
+    }
+
+    return pari;
+};
+
+console.log(soloPari(arrayNum));
 console.log("");
 
 // Esercizio 5.5
