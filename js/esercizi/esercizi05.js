@@ -120,6 +120,19 @@ console.log("");
 
 // Esercizio 5.8
 console.log("Esercizio 5.8");
+
+const intersezione = (array1, array2) => {
+    const comuni = [];
+    for(const ele1 of array1){
+        if(array2.includes(ele1)){
+            comuni.push(ele1);
+        }
+    }
+
+    return comuni;
+};
+
+console.log(intersezione(arrayNum, duplicates));
 console.log("");
 
 // Esercizio 5.9
