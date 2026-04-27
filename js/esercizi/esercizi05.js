@@ -99,6 +99,23 @@ console.log("");
 
 // Esercizio 5.7
 console.log("Esercizio 5.7");
+
+
+
+const noDouplicates = (array) => {
+    let noDupl = [];
+
+    for (const element of array) {
+        if(!noDupl.includes(element)){
+            noDupl.push(element);
+        }
+    }
+    return noDupl;
+};
+
+const duplicates = [1,1,3,6,2,8,1];
+console.log(noDouplicates(duplicates));
+
 console.log("");
 
 // Esercizio 5.8
