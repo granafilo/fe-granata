@@ -9,6 +9,17 @@ console.log("");
 // Esercizio 5.2
 console.log("Esercizio 5.2");
 
+const arrayNum = [1,2,3,4,5,6,7,8,9,10];
+
+const sommaArray = (arrayNum) => {
+    let somma = 0;
+    for(num of arrayNum){
+        somma += num;
+    }
+    return somma;
+};
+
+console.log(sommaArray(arrayNum));
 console.log("");
 
 // Esercizio 5.3
