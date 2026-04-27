@@ -1,3 +1,10 @@
+// const arra = [{nome : "Filippo"}, {nome : "Prova"}, {nome : "Aura"},{nome : "Bobby"}]
+
+// console.log(arra[0].nome.localeCompare(arra[1].nome);
+
+// console.log(arra.sort((a,b) => a.nome.localeCompare(b.nome)));
+
+
 // Esercizio 5.1
 console.log("Esercizio 5.1");
 
@@ -58,10 +65,26 @@ console.log("");
 
 // Esercizio 5.5
 console.log("Esercizio 5.5");
+
+const countNum = (array, ele) => {
+    let count = 0;
+
+    array.forEach((num) => {
+        if(num === ele){
+            count++;
+        }
+    })
+
+    return count;
+};
+
+console.log(countNum(arrayNum, 6));
 console.log("");
 
 // Esercizio 5.6
 console.log("Esercizio 5.6");
+
+
 console.log("");
 
 // Esercizio 5.7
