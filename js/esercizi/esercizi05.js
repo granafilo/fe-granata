@@ -84,7 +84,17 @@ console.log("");
 // Esercizio 5.6
 console.log("Esercizio 5.6");
 
+const mediaArray = (array) => {
+    let somma = 0;
 
+    array.forEach((num) => {
+        somma += num;
+    })
+
+    return somma / array.length;
+};
+
+console.log(mediaArray(arrayNum));
 console.log("");
 
 // Esercizio 5.7
