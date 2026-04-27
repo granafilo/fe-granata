@@ -137,6 +137,12 @@ console.log("");
 
 // Esercizio 5.9
 console.log("Esercizio 5.9");
+
+const ordineLen = (array) => {
+    return array.sort((a,b) => a.length - b.length);
+};
+
+console.log(ordineLen(amici));
 console.log("");
 
 // Esercizio 5.10
