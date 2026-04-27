@@ -24,6 +24,19 @@ console.log("");
 
 // Esercizio 5.3
 console.log("Esercizio 5.3");
+
+const maxArray = (arrayNum) => {
+    let max = 0;
+    for(num of arrayNum){
+        if(num > max){
+            max = num;
+        }
+    }
+    return max;
+};
+
+console.log(maxArray(arrayNum))
+
 console.log("");
 // Esercizio 5.4
 console.log("Esercizio 5.4");
