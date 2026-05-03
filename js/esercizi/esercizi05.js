@@ -292,6 +292,28 @@ console.log("");
 
 // Esercizio 5.17
 console.log("Esercizio 5.17");
+
+const sottoArray = (array, n) => {
+    let arrayCompleto = [];
+    for(let i = 0; i < array.length ; i += n){
+        let sArray = [];
+        let j = 0;
+        while( j < n && j+i < array.length){
+            console.log(i);
+            
+            console.log(j, array[i +j]);
+            sArray.push(array[i+j]);
+            j++;
+        }
+        arrayCompleto.push(sArray)
+    }
+
+    return arrayCompleto;
+};
+
+console.log(sottoArray([1,2,3,4,5], 2));
+
+
 console.log("");
 
 // Esercizio 5.18
