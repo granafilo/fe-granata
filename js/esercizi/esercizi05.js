@@ -16,7 +16,7 @@ console.log("");
 // Esercizio 5.2
 console.log("Esercizio 5.2");
 
-const arrayNum = [1,2,3,4,5,6,7,8,9,10];
+let arrayNum = [1,2,3,4,5,6,7,8,9,10];
 
 const sommaArray = (arrayNum) => {
     let somma = 0;
@@ -193,6 +193,29 @@ console.log("");
 
 // Esercizio 5.12
 console.log("Esercizio 5.12");
+
+arrayNum = [[1,2], 4, 6,2, 6, [7,8]]
+
+const appiatArray = (array) => {
+    
+    let arrayAppiattito = [];
+    
+    for(let i = 0; i < array.length; i++){
+        if(array[i][0]){
+            for(let j = 0; j < array[i].length; j++){
+                arrayAppiattito.push(array[i][j]);
+            }
+        }else{
+            arrayAppiattito.push(array[i]);
+        }
+    }
+
+    return arrayAppiattito;
+};
+
+console.log(appiatArray(arrayNum));
+
+
 console.log("");
 
 // Esercizio 5.13
