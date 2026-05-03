@@ -240,6 +240,18 @@ console.log("");
 
 // Esercizio 5.14
 console.log("Esercizio 5.14");
+
+const sommaCumulativa = (array) => {
+    let arrayCumulativo = [];
+    for(let i = 1; i <= array.length ; i++){
+        arrayCumulativo.push(sommaArray(array.slice(0,i)));
+    }
+
+    return arrayCumulativo;
+};
+
+console.log(sommaCumulativa([1,2,3,4, 5]));
+
 console.log("");
 
 // Esercizio 5.15
