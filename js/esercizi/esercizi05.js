@@ -318,6 +318,12 @@ console.log("");
 
 // Esercizio 5.18
 console.log("Esercizio 5.18");
+
+const mergeArray = (array1, array2) => {
+    let merge = array1.concat(array2);
+    return merge.sort((a,b) => a -b);
+};
+
 console.log("");
 
 // Esercizio 5.19
