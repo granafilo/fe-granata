@@ -545,4 +545,27 @@ console.log("");
 
 // Esercizio 5.28
 console.log("Esercizio 5.28");
+
+const ricBin = (array, val) => {
+    let inizio = 0, fine = array.length - 1;
+    while(inizio <= fine){
+        let meta = Math.floor((inizio + fine) / 2);
+
+        if(array[meta] == val){
+            return meta;
+        }
+
+        if(array[meta] < val){
+            inizio = meta + 1;
+        }else{
+            fine = meta - 1;
+        }
+    }
+
+    return -1;
+};
+
+console.log(ricBin([1,2,3,4,5,6,7,8,9,10], 1));
+
+
 console.log("");
