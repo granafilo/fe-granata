@@ -349,6 +349,13 @@ console.log("");
 // Esercizio 5.20
 console.log("Esercizio 5.20");
 
+const range = (array) => {
+    array.sort((a, b) => a - b);
+    return array[array.length - 1] - array[0];
+};
+
+console.log(range(arrayNum));
+
 console.log("");
 
 // Esercizio 5.21
