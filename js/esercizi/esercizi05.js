@@ -194,7 +194,7 @@ console.log("");
 // Esercizio 5.12
 console.log("Esercizio 5.12");
 
-arrayNum = [[1,2], 4, 6,2, 6, [7,8]]
+// arrayNum = [[1,2], 4, 6,2, 6, [7,8]]
 
 const appiatArray = (array) => {
     
@@ -256,6 +256,24 @@ console.log("");
 
 // Esercizio 5.15
 console.log("Esercizio 5.15");
+
+const shuffleArray = (array) => {
+    let randomArray = [];
+    let i = 0;
+    let n = array.length;
+    while(i < n){
+        let randomId = Math.floor(Math.random(array.length) * array.length); 
+        console.log(randomId);
+        randomArray.push(array[randomId]);
+        array.splice(randomId, 1);
+        i++;
+    }
+    return randomArray;
+};
+
+console.log(shuffleArray(arrayNum));
+
+
 console.log("");
 
 // Esercizio 5.16
