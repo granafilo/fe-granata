@@ -515,6 +515,28 @@ console.log("");
 // Esercizio 5.26
 console.log("Esercizio 5.26");
 
+const subArr = (arr) => {
+    let bScore = arr[0], score =arr[0];
+    let sub = [arr[0]], bSub = [arr[0]];
+    for(let i = 1; i < arr.length; i++){
+        if(Math.max(arr[i], arr[i] + score) == arr[i]){
+            sub = [arr[i]];
+            score = arr[i];
+        }else{
+            sub.push(arr[i]);
+            score += arr[i];
+        }
+        if(score > bScore){
+            bSub = [...sub]; 
+            bScore = score;
+        }
+    }
+    console.log(bSub);
+    
+    return bScore;
+};
+
+console.log(subArr([-2, 1, -3, 4, -1, 2, 1, -5, 4]));
 
 
 console.log("");
