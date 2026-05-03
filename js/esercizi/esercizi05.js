@@ -220,6 +220,22 @@ console.log("");
 
 // Esercizio 5.13
 console.log("Esercizio 5.13");
+
+let arrayPalindromoNum = [1,2,2,1]
+
+const arrayPalindromo = (array) => {
+    for(let i = 0; i < Math.floor(array.length / 2); i++ ){
+        
+        if(array[i] != array[array.length - i - 1]){
+            return "Array non palindromo";
+        }
+    }
+    return "Array Palindromo";
+};
+
+console.log(arrayPalindromo(arrayPalindromoNum));
+
+
 console.log("");
 
 // Esercizio 5.14
