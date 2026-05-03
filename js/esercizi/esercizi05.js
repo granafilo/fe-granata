@@ -362,7 +362,7 @@ console.log("");
 console.log("Esercizio 5.21");
 
 const sommaMinima = (array) => {
-    array.sort((a,b) => a - b);
+    array.sort((a, b) => a - b);
     return array[0] + array[1];
 };
 
@@ -373,10 +373,85 @@ console.log("");
 
 // Esercizio 5.22
 console.log("Esercizio 5.22");
+
+arrayNum.push(5)
+arrayNum.push(5)
+arrayNum.push(3)
+arrayNum.push(5)
+arrayNum.push(3)
+arrayNum.push(2)
+
+const mostFreqEle = (array, n) => {
+    let countEl = [];
+    let flag = true;
+    for (let i = 0; i < array.length; i++) {
+        flag = true;
+        for (let j = 0; j < countEl.length; j++) {
+            // console.log(countEl.length, array[i], countEl[j][0]);
+
+            if (array[i] == countEl[j][0]) {
+                countEl[j][1]++;
+                flag = false;
+            }
+        }
+
+        if (flag) {
+            countEl.push([array[i], 1]);
+        }
+
+    }
+
+    countEl.sort((a, b) => b[1] - a[1]);
+
+    return countEl.slice(0, n);
+};
+
+console.log(mostFreqEle(arrayNum, 2));
+
+
+console.log([[2, 0], [2, 2]].includes([2, true]));
+
+
 console.log("");
 
 // Esercizio 5.23
 console.log("Esercizio 5.23");
+
+const strNoDupl = (arrayStr) => {
+    let newStrArr = [];
+    let uguale = true;
+
+    for (let i = 0; i < arrayStr.length; i++) {
+        let j = i + 1;
+        uguale = true;
+        
+        console.log("inizio While", "i = ", i);
+        
+        while (uguale && (j <= arrayStr.length )) {
+            
+            if (arrayStr[i] != arrayStr[j]) {
+                uguale = false;
+                console.log(arrayStr[i], arrayStr[j]);
+                console.log("Diversa");
+                newStrArr.push(arrayStr[i]);
+                i = j-1;
+                console.log("Array nuovo:", newStrArr);
+                
+            } else {
+                console.log(arrayStr[i], arrayStr[j]);
+                console.log("Uguale, controllo la prossima stringa", j );
+                j++;
+            }
+
+        }
+    }
+
+    return newStrArr;
+};
+
+console.log(strNoDupl(["a", "a", "b", "b", "a"]));
+
+
 console.log("");
 
 // Esercizio 5.24
