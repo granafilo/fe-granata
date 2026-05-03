@@ -424,22 +424,22 @@ const strNoDupl = (arrayStr) => {
     for (let i = 0; i < arrayStr.length; i++) {
         let j = i + 1;
         uguale = true;
-        
+
         console.log("inizio While", "i = ", i);
-        
-        while (uguale && (j <= arrayStr.length )) {
-            
+
+        while (uguale && (j <= arrayStr.length)) {
+
             if (arrayStr[i] != arrayStr[j]) {
                 uguale = false;
                 console.log(arrayStr[i], arrayStr[j]);
                 console.log("Diversa");
                 newStrArr.push(arrayStr[i]);
-                i = j-1;
+                i = j - 1;
                 console.log("Array nuovo:", newStrArr);
-                
+
             } else {
                 console.log(arrayStr[i], arrayStr[j]);
-                console.log("Uguale, controllo la prossima stringa", j );
+                console.log("Uguale, controllo la prossima stringa", j);
                 j++;
             }
 
@@ -456,6 +456,37 @@ console.log("");
 
 // Esercizio 5.24
 console.log("Esercizio 5.24");
+
+const combinazioni = (array) => {
+    let comb = [];
+
+    for (let i = 0; i < array.length; i++) {
+        for (let j = 0; j < array.length; j++) {
+            const ins = [array[i], array[j]];
+            if (array[i] != array[j]) {
+                if (comb.length <= 0) {
+                    comb.push(ins);
+                    console.log("Aggiunto rpimo elemento!");
+                } else {
+                    let flag = false;
+                    for (el of comb) {
+                        if ((el[0] == ins[1] && el[1] == ins[0])) {
+                            flag = true;
+                        }
+                    }
+                    if (!flag) {
+                        comb.push(ins);
+                    }
+                }
+            }
+        }
+    }
+    return comb;
+};
+
+console.log(combinazioni([1, 2, 3,4]));
+
+
 console.log("");
 
 // Esercizio 5.25
