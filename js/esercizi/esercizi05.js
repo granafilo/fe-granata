@@ -360,6 +360,15 @@ console.log("");
 
 // Esercizio 5.21
 console.log("Esercizio 5.21");
+
+const sommaMinima = (array) => {
+    array.sort((a,b) => a - b);
+    return array[0] + array[1];
+};
+
+console.log(sommaMinima(arrayNum));
+
+
 console.log("");
 
 // Esercizio 5.22
