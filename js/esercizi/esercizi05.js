@@ -514,10 +514,33 @@ console.log("");
 
 // Esercizio 5.26
 console.log("Esercizio 5.26");
+
+
+
 console.log("");
 
 // Esercizio 5.27
 console.log("Esercizio 5.27");
+const sorted = (array) => {
+    let arrayOrd = [...array].sort((a,b) => a - b); 
+    for(let i = 0; i < array.length; i++){
+        console.log(array[i] , arrayOrd[i]);
+        
+        if(array[i] != arrayOrd[i]){
+            
+            console.log("Array non ordinato");
+            return;
+        }
+    }
+    console.log("Array Ordinato");
+    return;
+};
+
+console.log(arrayNum);
+
+sorted(arrayNum);
+
+
 console.log("");
 
 // Esercizio 5.28
