@@ -16,11 +16,11 @@ console.log("");
 // Esercizio 5.2
 console.log("Esercizio 5.2");
 
-let arrayNum = [1,2,3,4,5,6,7,8,9,10];
+let arrayNum = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
 const sommaArray = (arrayNum) => {
     let somma = 0;
-    for(num of arrayNum){
+    for (num of arrayNum) {
         somma += num;
     }
     return somma;
@@ -34,8 +34,8 @@ console.log("Esercizio 5.3");
 
 const maxArray = (arrayNum) => {
     let max = 0;
-    for(num of arrayNum){
-        if(num > max){
+    for (num of arrayNum) {
+        if (num > max) {
             max = num;
         }
     }
@@ -51,7 +51,7 @@ console.log("Esercizio 5.4");
 const soloPari = (arrayNum) => {
     let pari = [];
 
-    for (num of arrayNum){
+    for (num of arrayNum) {
         if (num % 2 == 0) {
             pari.push(num);
         }
@@ -70,7 +70,7 @@ const countNum = (array, ele) => {
     let count = 0;
 
     array.forEach((num) => {
-        if(num === ele){
+        if (num === ele) {
             count++;
         }
     })
@@ -106,14 +106,14 @@ const noDouplicates = (array) => {
     let noDupl = [];
 
     for (const element of array) {
-        if(!noDupl.includes(element)){
+        if (!noDupl.includes(element)) {
             noDupl.push(element);
         }
     }
     return noDupl;
 };
 
-const duplicates = [1,1,3,6,2,8,1];
+const duplicates = [1, 1, 3, 6, 2, 8, 1];
 console.log(noDouplicates(duplicates));
 
 console.log("");
@@ -123,8 +123,8 @@ console.log("Esercizio 5.8");
 
 const intersezione = (array1, array2) => {
     const comuni = [];
-    for(const ele1 of array1){
-        if(array2.includes(ele1)){
+    for (const ele1 of array1) {
+        if (array2.includes(ele1)) {
             comuni.push(ele1);
         }
     }
@@ -139,7 +139,7 @@ console.log("");
 console.log("Esercizio 5.9");
 
 const ordineLen = (array) => {
-    return array.sort((a,b) => a.length - b.length);
+    return array.sort((a, b) => a.length - b.length);
 };
 
 console.log(ordineLen(amici));
@@ -149,12 +149,12 @@ console.log("");
 console.log("Esercizio 5.10");
 
 const ruotaArray = (array, n) => {
-    
-    for(let i = 1; i <= n ;i++){
-        array.unshift( array[array.length  - 1]);
+
+    for (let i = 1; i <= n; i++) {
+        array.unshift(array[array.length - 1]);
         array.pop(array.length - 1);
     }
-    
+
     return array;
 };
 
@@ -167,15 +167,15 @@ console.log("");
 console.log("Esercizio 5.11");
 
 const arrayProperties = (array) => {
-    
+
     let output = {
         "min": array[0],
         "max": array[0],
         "media": 0,
         "somma": 0
     }
-    
-    for(let i = 0; i < array.length; i++){
+
+    for (let i = 0; i < array.length; i++) {
         output.somma += array[i];
         output.min = array[i] < output.min ? array[i] : output.min;
         output.max = array[i] > output.max ? array[i] : output.max;
@@ -197,15 +197,15 @@ console.log("Esercizio 5.12");
 // arrayNum = [[1,2], 4, 6,2, 6, [7,8]]
 
 const appiatArray = (array) => {
-    
+
     let arrayAppiattito = [];
-    
-    for(let i = 0; i < array.length; i++){
-        if(array[i][0]){
-            for(let j = 0; j < array[i].length; j++){
+
+    for (let i = 0; i < array.length; i++) {
+        if (array[i][0]) {
+            for (let j = 0; j < array[i].length; j++) {
                 arrayAppiattito.push(array[i][j]);
             }
-        }else{
+        } else {
             arrayAppiattito.push(array[i]);
         }
     }
@@ -221,12 +221,12 @@ console.log("");
 // Esercizio 5.13
 console.log("Esercizio 5.13");
 
-let arrayPalindromoNum = [1,2,2,1]
+let arrayPalindromoNum = [1, 2, 2, 1]
 
 const arrayPalindromo = (array) => {
-    for(let i = 0; i < Math.floor(array.length / 2); i++ ){
-        
-        if(array[i] != array[array.length - i - 1]){
+    for (let i = 0; i < Math.floor(array.length / 2); i++) {
+
+        if (array[i] != array[array.length - i - 1]) {
             return "Array non palindromo";
         }
     }
@@ -243,14 +243,14 @@ console.log("Esercizio 5.14");
 
 const sommaCumulativa = (array) => {
     let arrayCumulativo = [];
-    for(let i = 1; i <= array.length ; i++){
-        arrayCumulativo.push(sommaArray(array.slice(0,i)));
+    for (let i = 1; i <= array.length; i++) {
+        arrayCumulativo.push(sommaArray(array.slice(0, i)));
     }
 
     return arrayCumulativo;
 };
 
-console.log(sommaCumulativa([1,2,3,4, 5]));
+console.log(sommaCumulativa([1, 2, 3, 4, 5]));
 
 console.log("");
 
@@ -261,8 +261,8 @@ const shuffleArray = (array) => {
     let randomArray = [];
     let i = 0;
     let n = array.length;
-    while(i < n){
-        let randomId = Math.floor(Math.random(array.length) * array.length); 
+    while (i < n) {
+        let randomId = Math.floor(Math.random(array.length) * array.length);
         console.log(randomId);
         randomArray.push(array[randomId]);
         array.splice(randomId, 1);
@@ -281,7 +281,7 @@ console.log("Esercizio 5.16");
 const secMax = (array) => {
     array.sort((a, b) => b - a);
     console.log(array);
-    
+
     return array[1];
 };
 
@@ -295,14 +295,14 @@ console.log("Esercizio 5.17");
 
 const sottoArray = (array, n) => {
     let arrayCompleto = [];
-    for(let i = 0; i < array.length ; i += n){
+    for (let i = 0; i < array.length; i += n) {
         let sArray = [];
         let j = 0;
-        while( j < n && j+i < array.length){
+        while (j < n && j + i < array.length) {
             console.log(i);
-            
-            console.log(j, array[i +j]);
-            sArray.push(array[i+j]);
+
+            console.log(j, array[i + j]);
+            sArray.push(array[i + j]);
             j++;
         }
         arrayCompleto.push(sArray)
@@ -311,7 +311,7 @@ const sottoArray = (array, n) => {
     return arrayCompleto;
 };
 
-console.log(sottoArray([1,2,3,4,5], 2));
+console.log(sottoArray([1, 2, 3, 4, 5], 2));
 
 
 console.log("");
@@ -321,17 +321,34 @@ console.log("Esercizio 5.18");
 
 const mergeArray = (array1, array2) => {
     let merge = array1.concat(array2);
-    return merge.sort((a,b) => a -b);
+    return merge.sort((a, b) => a - b);
 };
 
 console.log("");
 
 // Esercizio 5.19
 console.log("Esercizio 5.19");
+
+const arrayDupl = (array) => {
+    let arrayDouble = [];
+    for (let i = 0; i < array.length; i++) {
+
+        if (array.indexOf(array[i]) != array.lastIndexOf(array[i]) && !arrayDouble.includes(array[i])) {
+            arrayDouble.push(array[i])
+        }
+
+    }
+    return arrayDouble;
+};
+
+console.log(arrayDupl([1, 1, 4, 7, 2, 7, 12, 8, 25, 91, 2, 7]));
+
+
 console.log("");
 
 // Esercizio 5.20
 console.log("Esercizio 5.20");
+
 console.log("");
 
 // Esercizio 5.21
