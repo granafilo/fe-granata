@@ -271,13 +271,23 @@ const shuffleArray = (array) => {
     return randomArray;
 };
 
-console.log(shuffleArray(arrayNum));
-
+// console.log(shuffleArray(arrayNum));
 
 console.log("");
 
 // Esercizio 5.16
 console.log("Esercizio 5.16");
+
+const secMax = (array) => {
+    array.sort((a, b) => b - a);
+    console.log(array);
+    
+    return array[1];
+};
+
+console.log(secMax(arrayNum));
+
+
 console.log("");
 
 // Esercizio 5.17
