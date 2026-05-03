@@ -147,6 +147,20 @@ console.log("");
 
 // Esercizio 5.10
 console.log("Esercizio 5.10");
+
+const ruotaArray = (array, n) => {
+    
+    for(let i = 1; i <= n ;i++){
+        array.unshift( array[array.length  - 1]);
+        array.pop(array.length - 1);
+    }
+    
+    return array;
+};
+
+console.log(ruotaArray(arrayNum, 2));
+
+
 console.log("");
 
 // Esercizio 5.11
