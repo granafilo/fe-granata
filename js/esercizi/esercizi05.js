@@ -489,8 +489,27 @@ console.log(combinazioni([1, 2, 3,4]));
 
 console.log("");
 
+
 // Esercizio 5.25
 console.log("Esercizio 5.25");
+
+const diffSimm = (array1, array2) => {
+
+    let diff = arrayDupl(array1);
+
+    for(el of array2){
+        if (!diff.includes(el)){
+            diff.push(el);
+            
+        }
+    }
+
+    return diff;
+};
+
+console.log(diffSimm(arrayNum, amici));
+
+
 console.log("");
 
 // Esercizio 5.26
