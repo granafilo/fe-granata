@@ -165,6 +165,30 @@ console.log("");
 
 // Esercizio 5.11
 console.log("Esercizio 5.11");
+
+const arrayProperties = (array) => {
+    
+    let output = {
+        "min": array[0],
+        "max": array[0],
+        "media": 0,
+        "somma": 0
+    }
+    
+    for(let i = 0; i < array.length; i++){
+        output.somma += array[i];
+        output.min = array[i] < output.min ? array[i] : output.min;
+        output.max = array[i] > output.max ? array[i] : output.max;
+    }
+
+    output.media = output.somma / array.length;
+
+    return output;
+};
+
+console.log(arrayProperties(arrayNum));
+
+
 console.log("");
 
 // Esercizio 5.12
