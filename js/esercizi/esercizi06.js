@@ -48,6 +48,27 @@ console.log(presentazione(persona));
 // Esercizio 6.5
 // Scrivi una funzione che accetti due oggetti e restituisca un nuovo oggetto che sia la fusione dei due (le proprietà del secondo sovrascrivono quelle del primo in caso di conflitto).
 
+const clone = (obj, clone) => {
+    
+    for(let prop of Object.keys(obj)){
+        clone[prop] = obj[prop];
+    }
+    return 
+};
+
+const fusioneObj = (obj1, obj2) => {
+    
+    let fuso = {};
+
+    clone(obj1, fuso);
+    clone(obj2, fuso);
+
+    return fuso;
+};
+
+console.log(fusioneObj(libro, rettangolo));
+
+
 // Esercizio 6.6
 // Dato un array di oggetti che rappresentano studenti (ciascuno con nome e voto), scrivi una funzione che restituisca il nome dello studente con il voto più alto.
 
