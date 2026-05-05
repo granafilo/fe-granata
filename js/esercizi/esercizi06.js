@@ -8,11 +8,17 @@ let libro = {
     pagine: 358
 }
 
+console.log("Libro: ");
 console.log(Object.entries(libro));
 
 
 // Esercizio 6.2
 // Crea un oggetto rettangolo con le proprietà base e altezza, e i metodi area e perimetro che restituiscano i rispettivi valori.
+
+let rettangolo = {base: 2, altezza: 1, area: function() { return (this.base * this.altezza)}, perimetro: function(){return this.base*2 + this.altezza*2}}
+
+console.log(rettangolo.area(), rettangolo.perimetro());
+
 
 // Esercizio 6.3
 // Scrivi una funzione che accetti un oggetto e restituisca il numero delle sue proprietà.
