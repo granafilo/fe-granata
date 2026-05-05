@@ -2,7 +2,7 @@
 // Crea un oggetto libro con le proprietà: titolo, autore, annoPubblicazione, pagine. Stampa ogni proprietà.
 
 let libro = {
-    titolo : "Il terzo gemello",
+    titolo: "Il terzo gemello",
     autore: "Ken Follet",
     annoPubblicazione: 2017,
     pagine: 358
@@ -15,7 +15,7 @@ console.log(Object.entries(libro));
 // Esercizio 6.2
 // Crea un oggetto rettangolo con le proprietà base e altezza, e i metodi area e perimetro che restituiscano i rispettivi valori.
 
-let rettangolo = {base: 2, altezza: 1, area: function() { return (this.base * this.altezza)}, perimetro: function(){return this.base*2 + this.altezza*2}}
+let rettangolo = { base: 2, altezza: 1, area: function () { return (this.base * this.altezza) }, perimetro: function () { return this.base * 2 + this.altezza * 2 } }
 
 console.log(rettangolo.area(), rettangolo.perimetro());
 
@@ -49,15 +49,15 @@ console.log(presentazione(persona));
 // Scrivi una funzione che accetti due oggetti e restituisca un nuovo oggetto che sia la fusione dei due (le proprietà del secondo sovrascrivono quelle del primo in caso di conflitto).
 
 const clone = (obj, clone) => {
-    
-    for(let prop of Object.keys(obj)){
+
+    for (let prop of Object.keys(obj)) {
         clone[prop] = obj[prop];
     }
-    return 
+    return
 };
 
 const fusioneObj = (obj1, obj2) => {
-    
+
     let fuso = {};
 
     clone(obj1, fuso);
@@ -72,12 +72,12 @@ console.log(fusioneObj(libro, rettangolo));
 // Esercizio 6.6
 // Dato un array di oggetti che rappresentano studenti (ciascuno con nome e voto), scrivi una funzione che restituisca il nome dello studente con il voto più alto.
 
-let studenti = [{nome:"Filippo", voto: 10},{nome:"Alessandro", voto: 9}];
+let studenti = [{ nome: "Filippo", voto: 10 }, { nome: "Alessandro", voto: 9 }];
 
 const nomeVoto = (studenti) => {
     let studenteVotoMax = studenti[0];
-    for(let i = 1; i < studenti.length; i++){
-        if(studenti[i].voto > studenteVotoMax.voto){
+    for (let i = 1; i < studenti.length; i++) {
+        if (studenti[i].voto > studenteVotoMax.voto) {
             studenteVotoMax = studenti[i];
         }
     }
@@ -91,12 +91,12 @@ console.log(nomeVoto(studenti));
 // Esercizio 6.7
 // Dato un array di oggetti { nome, prezzo, quantita } che rappresentano prodotti in un carrello, scrivi una funzione che calcoli il totale dell'ordine.
 
-let cart = [{ nome: "Pepe", prezzo: 1, quantita:1 }, { nome:"Sale", prezzo:2.5, quantita: 5 }]
+let cart = [{ nome: "Pepe", prezzo: 1, quantita: 1 }, { nome: "Sale", prezzo: 2.5, quantita: 5 }]
 
 const costoSpesa = (cart) => {
     let spesa = 0;
-    
-    for(let i = 0; i < cart.length; i++){
+
+    for (let i = 0; i < cart.length; i++) {
         spesa += cart[i].prezzo * cart[i].quantita;
     }
 
@@ -111,7 +111,7 @@ console.log(costoSpesa(cart));
 
 const invertiObj = (obj) => {
     let invertito = {}
-    for(let prop of Object.keys(obj)){
+    for (let prop of Object.keys(obj)) {
         invertito[obj[prop]] = prop;
     }
 
@@ -126,17 +126,33 @@ console.log(invertiObj(rettangolo));
 
 // Input:
 
-// [
-//   { categoria: "frutta", valore: "mela" },
-//   { categoria: "verdura", valore: "carota" },
-//   { categoria: "frutta", valore: "pera" }
-// ]
+let spesa = [
+    { categoria: "frutta", valore: "mela" },
+    { categoria: "verdura", valore: "carota" },
+    { categoria: "frutta", valore: "pera" }
+]
 // Output:
 
 // {
 //   frutta: ["mela", "pera"],
 //   verdura: ["carota"]
 // }
+
+const raggruppaSpesa = (spesa) => {
+    let gruppo = {};
+
+
+    for (let i = 0; i < spesa.length; i++) {
+        if (!gruppo[spesa[i].categoria]) {
+            gruppo[spesa[i].categoria] = []
+        }
+        gruppo[spesa[i].categoria].push(spesa[i].valore);
+    }
+    return gruppo;
+};
+console.log(raggruppaSpesa(spesa));
+
+
 // Esercizio 6.10
 // Scrivi una funzione che confronti due oggetti e restituisca true se hanno le stesse proprietà con gli stessi valori (confronto superficiale).
 
