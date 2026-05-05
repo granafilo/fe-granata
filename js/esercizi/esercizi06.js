@@ -33,6 +33,18 @@ console.log("Numero Proprietà: ", countProp(libro));
 // Esercizio 6.4
 // Scrivi una funzione che accetti un oggetto persona (con nome, cognome, eta) e restituisca una stringa di presentazione formattata.
 
+let persona = {
+    nome: "filippo",
+    cognome: "granata",
+    eta: 21
+}
+
+const presentazione = (persona) => {
+    return `Ciao sono ${persona.nome} ${persona.cognome}, e ho ${persona.eta} anni.`
+};
+
+console.log(presentazione(persona));
+
 // Esercizio 6.5
 // Scrivi una funzione che accetti due oggetti e restituisca un nuovo oggetto che sia la fusione dei due (le proprietà del secondo sovrascrivono quelle del primo in caso di conflitto).
 
