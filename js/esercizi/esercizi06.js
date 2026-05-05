@@ -72,6 +72,22 @@ console.log(fusioneObj(libro, rettangolo));
 // Esercizio 6.6
 // Dato un array di oggetti che rappresentano studenti (ciascuno con nome e voto), scrivi una funzione che restituisca il nome dello studente con il voto più alto.
 
+let studenti = [{nome:"Filippo", voto: 10},{nome:"Alessandro", voto: 9}];
+
+const nomeVoto = (studenti) => {
+    let studenteVotoMax = studenti[0];
+    for(let i = 1; i < studenti.length; i++){
+        if(studenti[i].voto > studenteVotoMax.voto){
+            studenteVotoMax = studenti[i];
+        }
+    }
+
+    return studenteVotoMax;
+};
+
+console.log(nomeVoto(studenti));
+
+
 // Esercizio 6.7
 // Dato un array di oggetti { nome, prezzo, quantita } che rappresentano prodotti in un carrello, scrivi una funzione che calcoli il totale dell'ordine.
 
