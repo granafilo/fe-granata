@@ -91,6 +91,21 @@ console.log(nomeVoto(studenti));
 // Esercizio 6.7
 // Dato un array di oggetti { nome, prezzo, quantita } che rappresentano prodotti in un carrello, scrivi una funzione che calcoli il totale dell'ordine.
 
+let cart = [{ nome: "Pepe", prezzo: 1, quantita:1 }, { nome:"Sale", prezzo:2.5, quantita: 5 }]
+
+const costoSpesa = (cart) => {
+    let spesa = 0;
+    
+    for(let i = 0; i < cart.length; i++){
+        spesa += cart[i].prezzo * cart[i].quantita;
+    }
+
+    return spesa;
+};
+
+console.log(costoSpesa(cart));
+
+
 // Esercizio 6.8
 // Scrivi una funzione che accetti un oggetto e restituisca un nuovo oggetto con chiavi e valori invertiti. Ad esempio, { a: 1, b: 2 } diventa { 1: "a", 2: "b" }.
 
