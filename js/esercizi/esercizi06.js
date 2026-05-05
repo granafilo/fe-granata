@@ -1,6 +1,16 @@
 // Esercizio 6.1
 // Crea un oggetto libro con le proprietà: titolo, autore, annoPubblicazione, pagine. Stampa ogni proprietà.
 
+let libro = {
+    titolo : "Il terzo gemello",
+    autore: "Ken Follet",
+    annoPubblicazione: 2017,
+    pagine: 358
+}
+
+console.log(Object.entries(libro));
+
+
 // Esercizio 6.2
 // Crea un oggetto rettangolo con le proprietà base e altezza, e i metodi area e perimetro che restituiscano i rispettivi valori.
 
