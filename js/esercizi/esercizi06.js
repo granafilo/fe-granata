@@ -23,6 +23,13 @@ console.log(rettangolo.area(), rettangolo.perimetro());
 // Esercizio 6.3
 // Scrivi una funzione che accetti un oggetto e restituisca il numero delle sue proprietà.
 
+const countProp = (object) => {
+    return Object.keys(object).length;
+};
+
+console.log("Numero Proprietà: ", countProp(libro));
+
+
 // Esercizio 6.4
 // Scrivi una funzione che accetti un oggetto persona (con nome, cognome, eta) e restituisca una stringa di presentazione formattata.
 
