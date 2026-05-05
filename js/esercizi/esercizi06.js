@@ -109,6 +109,18 @@ console.log(costoSpesa(cart));
 // Esercizio 6.8
 // Scrivi una funzione che accetti un oggetto e restituisca un nuovo oggetto con chiavi e valori invertiti. Ad esempio, { a: 1, b: 2 } diventa { 1: "a", 2: "b" }.
 
+const invertiObj = (obj) => {
+    let invertito = {}
+    for(let prop of Object.keys(obj)){
+        invertito[obj[prop]] = prop;
+    }
+
+    return invertito;
+};
+
+console.log(invertiObj(rettangolo));
+
+
 // Esercizio 6.9
 // Scrivi una funzione che, dato un array di oggetti con proprietà categoria e valore, raggruppi gli oggetti per categoria in un nuovo oggetto. Ad esempio:
 
