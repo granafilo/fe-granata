@@ -77,9 +77,19 @@ console.log(minEta);
 
 // Esercizio 7.10
 // Dato un array di stringhe, usa reduce per creare un oggetto che conti le occorrenze di ogni stringa.
+let occorrenze = strings.reduce((acc, parola) => {
+    acc[parola] = (acc[parola] || 0) + 1 ;
+    return acc
+} , {})
+
+console.log(occorrenze);
+
 
 // Esercizio 7.11
 // Dato un array di array di numeri (es. [[1, 2], [3, 4], [5, 6]]), usa reduce per appiattirlo in un unico array e poi calcola la somma totale con un'altra chiamata a reduce.
+
+
+
 
 // Esercizio 7.12
 // Dato un array di transazioni (oggetti con tipo che può essere "entrata" o "uscita" e importo), calcola il saldo finale usando reduce.
