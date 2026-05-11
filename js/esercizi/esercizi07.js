@@ -39,6 +39,10 @@ console.log(nameProd);
 // Esercizio 7.5
 // Dato un array di numeri, usa reduce per calcolare il prodotto di tutti gli elementi.
 
+let prodottoArray = [1,2,3,4,5,6,7,8,9,10].reduce((prev, curr) => prev * curr);
+console.log(prodottoArray);
+
+
 // Esercizio 7.6
 // Dato un array di stringhe, usa reduce per trovare la stringa più lunga.
 
