@@ -68,6 +68,12 @@ console.log(noDupl, noDupl.length);
 
 // Esercizio 7.9
 // Dato un array di oggetti { nome, eta }, usa i metodi degli array per trovare la persona più giovane.
+let persone = [{nome: "Pier", eta : 10}, {nome: "Paolo", eta : 15}, {nome: "Gian", eta : 9}, {nome: "Franco", eta : 22}]
+
+let minEta = persone.reduce((prev, curr) => curr.eta <= prev.eta ? curr : prev, persone[0])
+
+console.log(minEta);
+
 
 // Esercizio 7.10
 // Dato un array di stringhe, usa reduce per creare un oggetto che conti le occorrenze di ogni stringa.
