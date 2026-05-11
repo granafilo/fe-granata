@@ -46,6 +46,9 @@ console.log(prodottoArray);
 // Esercizio 7.6
 // Dato un array di stringhe, usa reduce per trovare la stringa più lunga.
 
+let strMaxLen = strings.reduce((prev, curr) => prev.length >= curr.length ? prev : curr)
+console.log(strMaxLen);
+
 // Esercizio 7.7
 // Dato un array di oggetti { studente, voto }, usa i metodi degli array per calcolare la media dei voti.
 
