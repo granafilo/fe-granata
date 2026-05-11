@@ -39,7 +39,7 @@ console.log(nameProd);
 // Esercizio 7.5
 // Dato un array di numeri, usa reduce per calcolare il prodotto di tutti gli elementi.
 
-let prodottoArray = [1,2,3,4,5,6,7,8,9,10].reduce((prev, curr) => prev * curr);
+let prodottoArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10].reduce((prev, curr) => prev * curr);
 console.log(prodottoArray);
 
 
@@ -53,9 +53,9 @@ console.log(strMaxLen);
 // Dato un array di oggetti { studente, voto }, usa i metodi degli array per calcolare la media dei voti.
 let somma = 0;
 
-let studenti = [{nome : "Ale", voto : 2}, {nome : "Tommy", voto : 3}, {nome : "Fil", voto : 8}]
+let studenti = [{ nome: "Ale", voto: 2 }, { nome: "Tommy", voto: 3 }, { nome: "Fil", voto: 8 }]
 somma = studenti.reduce((sum, obj) => sum + obj.voto, 0)
-let mediaStudenti =  somma / studenti.length;
+let mediaStudenti = somma / studenti.length;
 
 console.log(somma, mediaStudenti);
 
@@ -63,12 +63,15 @@ console.log(somma, mediaStudenti);
 // Esercizio 7.8
 // Dato un array di numeri che può contenere duplicati, usa filter per creare un array senza duplicati (senza usare Set).
 let noDupl = [];
-noDupl = numbers.filter((num) => !noDupl.includes(num))
+noDupl = numbers.filter((num, index, self) => {
+
+    return self.indexOf(num) === index;
+})
 console.log(noDupl, noDupl.length);
 
 // Esercizio 7.9
 // Dato un array di oggetti { nome, eta }, usa i metodi degli array per trovare la persona più giovane.
-let persone = [{nome: "Pier", eta : 10}, {nome: "Paolo", eta : 15}, {nome: "Gian", eta : 9}, {nome: "Franco", eta : 22}]
+let persone = [{ nome: "Pier", eta: 10 }, { nome: "Paolo", eta: 15 }, { nome: "Gian", eta: 9 }, { nome: "Franco", eta: 22 }]
 
 let minEta = persone.reduce((prev, curr) => curr.eta <= prev.eta ? curr : prev, persone[0])
 
@@ -78,9 +81,9 @@ console.log(minEta);
 // Esercizio 7.10
 // Dato un array di stringhe, usa reduce per creare un oggetto che conti le occorrenze di ogni stringa.
 let occorrenze = strings.reduce((acc, parola) => {
-    acc[parola] = (acc[parola] || 0) + 1 ;
+    acc[parola] = (acc[parola] || 0) + 1;
     return acc
-} , {})
+}, {})
 
 console.log(occorrenze);
 
@@ -88,7 +91,7 @@ console.log(occorrenze);
 // Esercizio 7.11
 // Dato un array di array di numeri (es. [[1, 2], [3, 4], [5, 6]]), usa reduce per appiattirlo in un unico array e poi calcola la somma totale con un'altra chiamata a reduce.
 
-let numD =  [[1, 2], [3, 4], [5, 6]];
+let numD = [[1, 2], [3, 4], [5, 6]];
 
 let piatto = numD.reduce((flat, num) => flat.concat(num), [])
 console.log(piatto);
@@ -102,12 +105,12 @@ console.log(sommaTot);
 // Esercizio 7.12
 // Dato un array di transazioni (oggetti con tipo che può essere "entrata" o "uscita" e importo), calcola il saldo finale usando reduce.
 
-let transazioni = [{tipo: "entrata", importo : 10}, {tipo: "entrata", importo : 18}, {tipo: "uscita", importo : 3}]
+let transazioni = [{ tipo: "entrata", importo: 10 }, { tipo: "entrata", importo: 18 }, { tipo: "uscita", importo: 3 }]
 
 let saldo = transazioni.reduce((sum = 0, tra) => {
-    if(tra.tipo === "entrata"){
+    if (tra.tipo === "entrata") {
         sum += tra.importo;
-    }else{
+    } else {
         sum -= tra.importo;
     }
     return sum
@@ -123,6 +126,15 @@ console.log("Saldo: ", saldo);
 // Rimuova i duplicati
 // Ordini in ordine crescente
 // Moltiplichi ogni numero per 10
+let numeri = [];
+numeri = numbers
+    .filter((num) => num > 0)
+    .filter((num, index, self) => self.indexOf(num) === index)
+    .sort((num1, num2) => num1 - num2)
+    .map((num) => num * 10);
+    
+console.log(numeri);
+
 // Esercizio 7.14
 // Implementa la tua versione di map, filter e reduce come funzioni standalone (senza usare i metodi nativi). Ciascuna deve accettare un array e una callback.
 
