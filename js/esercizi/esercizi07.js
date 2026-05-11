@@ -99,9 +99,22 @@ let sommaTot = piatto.reduce((sum = 0, num) => sum + num, 0)
 console.log(sommaTot);
 
 
-
 // Esercizio 7.12
 // Dato un array di transazioni (oggetti con tipo che può essere "entrata" o "uscita" e importo), calcola il saldo finale usando reduce.
+
+let transazioni = [{tipo: "entrata", importo : 10}, {tipo: "entrata", importo : 18}, {tipo: "uscita", importo : 3}]
+
+let saldo = transazioni.reduce((sum = 0, tra) => {
+    if(tra.tipo === "entrata"){
+        sum += tra.importo;
+    }else{
+        sum -= tra.importo;
+    }
+    return sum
+}, 0)
+
+console.log("Saldo: ", saldo);
+
 
 // Esercizio 7.13
 // Dato un array di numeri, scrivi una singola catena di metodi che:
