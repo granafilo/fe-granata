@@ -21,11 +21,20 @@ console.log(stringUpper);
 // Esercizio 7.3
 // Dato un array di numeri, usa filter per ottenere solo i numeri maggiori di 10 e minori di 50.
 
-let range = numbers.filter((num) => num > 10 && num < 50 )
+let range = numbers.filter((num) => num > 10 && num < 50)
 console.log(range);
 
 // Esercizio 7.4
 // Dato un array di oggetti { nome, prezzo } che rappresentano prodotti, usa filter per trovare i prodotti con prezzo inferiore a 20 euro, poi usa map per ottenere un array con solo i nomi di quei prodotti.
+
+let product = [{ nome: "String", prezzo: 10 }, { nome: "String1", prezzo: 10 }, { nome: "String2", prezzo: 10 }, { nome: "String3", prezzo: 10 }, { nome: "String4", prezzo: 10 }, { nome: "String5", prezzo: 25 }]
+
+let priceL = product.filter((pro) => pro.prezzo < 20);
+let nameProd = priceL.map((pro) => pro.nome);
+
+console.log(nameProd);
+
+
 
 // Esercizio 7.5
 // Dato un array di numeri, usa reduce per calcolare il prodotto di tutti gli elementi.
