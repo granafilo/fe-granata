@@ -1,7 +1,10 @@
 // Esercizio 7.1
 // Dato un array di numeri, usa map per creare un nuovo array dove ogni numero è triplicato.
 
-let numbers = [1,2,3,4,5]
+let numbers = []
+for (let i = 0; i < 50; i++) {
+    numbers.push(Math.floor(Math.random() * 100));
+}
 
 const triple = numbers.map((num) => num * 3);
 console.log(triple);
@@ -17,6 +20,9 @@ console.log(stringUpper);
 
 // Esercizio 7.3
 // Dato un array di numeri, usa filter per ottenere solo i numeri maggiori di 10 e minori di 50.
+
+let range = numbers.filter((num) => num > 10 && num < 50 )
+console.log(range);
 
 // Esercizio 7.4
 // Dato un array di oggetti { nome, prezzo } che rappresentano prodotti, usa filter per trovare i prodotti con prezzo inferiore a 20 euro, poi usa map per ottenere un array con solo i nomi di quei prodotti.
