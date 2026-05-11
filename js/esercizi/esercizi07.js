@@ -88,6 +88,15 @@ console.log(occorrenze);
 // Esercizio 7.11
 // Dato un array di array di numeri (es. [[1, 2], [3, 4], [5, 6]]), usa reduce per appiattirlo in un unico array e poi calcola la somma totale con un'altra chiamata a reduce.
 
+let numD =  [[1, 2], [3, 4], [5, 6]];
+
+let piatto = numD.reduce((flat, num) => flat.concat(num), [])
+console.log(piatto);
+
+
+let sommaTot = piatto.reduce((sum = 0, num) => sum + num, 0)
+
+console.log(sommaTot);
 
 
 
