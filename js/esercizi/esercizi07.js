@@ -1,5 +1,6 @@
 // Esercizio 7.1
 // Dato un array di numeri, usa map per creare un nuovo array dove ogni numero è triplicato.
+console.log("Esercizio 7.1");
 
 let numbers = []
 for (let i = 0; i < 50; i++) {
@@ -12,6 +13,7 @@ console.log(triple);
 
 // Esercizio 7.2
 // Dato un array di stringhe, usa map per creare un nuovo array dove ogni stringa ha la prima lettera maiuscola e il resto minuscolo.
+console.log("Esercizio 7.2");
 
 let strings = ["Ciao", "come", "Va", "salice"]
 const stringUpper = strings.map((str) => str.charAt(0).toUpperCase() + str.slice(1).toLowerCase())
@@ -20,12 +22,15 @@ console.log(stringUpper);
 
 // Esercizio 7.3
 // Dato un array di numeri, usa filter per ottenere solo i numeri maggiori di 10 e minori di 50.
+console.log("Esercizio 7.3");
 
 let range = numbers.filter((num) => num > 10 && num < 50)
 console.log(range);
 
 // Esercizio 7.4
 // Dato un array di oggetti { nome, prezzo } che rappresentano prodotti, usa filter per trovare i prodotti con prezzo inferiore a 20 euro, poi usa map per ottenere un array con solo i nomi di quei prodotti.
+console.log("Esercizio 7.4");
+
 
 let product = [{ nome: "String", prezzo: 10 }, { nome: "String1", prezzo: 10 }, { nome: "String2", prezzo: 10 }, { nome: "String3", prezzo: 10 }, { nome: "String4", prezzo: 10 }, { nome: "String5", prezzo: 25 }]
 
@@ -38,6 +43,7 @@ console.log(nameProd);
 
 // Esercizio 7.5
 // Dato un array di numeri, usa reduce per calcolare il prodotto di tutti gli elementi.
+console.log("Esercizio 7.5");
 
 let prodottoArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10].reduce((prev, curr) => prev * curr);
 console.log(prodottoArray);
@@ -45,12 +51,15 @@ console.log(prodottoArray);
 
 // Esercizio 7.6
 // Dato un array di stringhe, usa reduce per trovare la stringa più lunga.
+console.log("Esercizio 7.6");
 
 let strMaxLen = strings.reduce((prev, curr) => prev.length >= curr.length ? prev : curr)
 console.log(strMaxLen);
 
 // Esercizio 7.7
 // Dato un array di oggetti { studente, voto }, usa i metodi degli array per calcolare la media dei voti.
+console.log("Esercizio 7.7");
+
 let somma = 0;
 
 let studenti = [{ nome: "Ale", voto: 2 }, { nome: "Tommy", voto: 3 }, { nome: "Fil", voto: 8 }]
@@ -62,6 +71,8 @@ console.log(somma, mediaStudenti);
 
 // Esercizio 7.8
 // Dato un array di numeri che può contenere duplicati, usa filter per creare un array senza duplicati (senza usare Set).
+console.log("Esercizio 7.8");
+
 let noDupl = [];
 noDupl = numbers.filter((num, index, self) => {
 
@@ -71,6 +82,8 @@ console.log(noDupl, noDupl.length);
 
 // Esercizio 7.9
 // Dato un array di oggetti { nome, eta }, usa i metodi degli array per trovare la persona più giovane.
+console.log("Esercizio 7.9");
+
 let persone = [{ nome: "Pier", eta: 10 }, { nome: "Paolo", eta: 15 }, { nome: "Gian", eta: 9 }, { nome: "Franco", eta: 22 }]
 
 let minEta = persone.reduce((prev, curr) => curr.eta <= prev.eta ? curr : prev, persone[0])
@@ -80,6 +93,9 @@ console.log(minEta);
 
 // Esercizio 7.10
 // Dato un array di stringhe, usa reduce per creare un oggetto che conti le occorrenze di ogni stringa.
+
+console.log("Esercizio 7.10");
+
 let occorrenze = strings.reduce((acc, parola) => {
     acc[parola] = (acc[parola] || 0) + 1;
     return acc
@@ -90,6 +106,8 @@ console.log(occorrenze);
 
 // Esercizio 7.11
 // Dato un array di array di numeri (es. [[1, 2], [3, 4], [5, 6]]), usa reduce per appiattirlo in un unico array e poi calcola la somma totale con un'altra chiamata a reduce.
+
+console.log("Esercizio 7.11");
 
 let numD = [[1, 2], [3, 4], [5, 6]];
 
@@ -104,6 +122,8 @@ console.log(sommaTot);
 
 // Esercizio 7.12
 // Dato un array di transazioni (oggetti con tipo che può essere "entrata" o "uscita" e importo), calcola il saldo finale usando reduce.
+
+console.log("Esercizio 7.12");
 
 let transazioni = [{ tipo: "entrata", importo: 10 }, { tipo: "entrata", importo: 18 }, { tipo: "uscita", importo: 3 }]
 
@@ -126,17 +146,61 @@ console.log("Saldo: ", saldo);
 // Rimuova i duplicati
 // Ordini in ordine crescente
 // Moltiplichi ogni numero per 10
+
+console.log("Esercizio 7.13");
+
 let numeri = [];
 numeri = numbers
     .filter((num) => num > 0)
     .filter((num, index, self) => self.indexOf(num) === index)
     .sort((num1, num2) => num1 - num2)
     .map((num) => num * 10);
-    
+
 console.log(numeri);
 
 // Esercizio 7.14
 // Implementa la tua versione di map, filter e reduce come funzioni standalone (senza usare i metodi nativi). Ciascuna deve accettare un array e una callback.
+
+console.log("Esercizio 7.14");
+
+
+const persMap = (array, fun) => {
+    let arrayOutput = [];
+    for (let i = 0; i < array.length; i++) {
+        arrayOutput.push(fun(array[i]))
+    }
+    return arrayOutput;
+};
+
+console.log("MAP: ", numbers.map((num) => num * 3));
+console.log("PERSONAL MAP: ", persMap(numbers, (num) => num * 3));
+
+const persFilter = (array, fun) => {
+    let arrayOutput = [];
+    for (let i = 0; i < array.length; i++) {
+        if (fun(array[i])) {
+            arrayOutput.push(array[i])
+        }
+    }
+    return arrayOutput;
+};
+
+console.log("FILTER: ",numbers.filter((num) => num % 2 === 0));
+console.log("PERSONAL FILTER: ",persFilter(numbers, (num) => num % 2 == 0));
+
+const persReduce = (array, fun) => {
+    let output = 0;
+    for (let i = 0; i < array.length; i++) {
+        output = fun(output, array[i]);
+    }
+    return output;
+};
+
+console.log("REDUCE: ", numbers.reduce((prev, curr) => prev + curr, 0));
+
+console.log("PERSONAL REDUCE: ", persReduce(numbers, (prev, curr) => prev + curr));
+
+
 
 // Esercizio 7.15
 // Dato un array di oggetti che rappresentano ordini { cliente, prodotto, quantita, prezzoUnitario }, scrivi una pipeline che:
