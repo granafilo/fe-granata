@@ -62,6 +62,9 @@ console.log(somma, mediaStudenti);
 
 // Esercizio 7.8
 // Dato un array di numeri che può contenere duplicati, usa filter per creare un array senza duplicati (senza usare Set).
+let noDupl = [];
+noDupl = numbers.filter((num) => !noDupl.includes(num))
+console.log(noDupl, noDupl.length);
 
 // Esercizio 7.9
 // Dato un array di oggetti { nome, eta }, usa i metodi degli array per trovare la persona più giovane.
