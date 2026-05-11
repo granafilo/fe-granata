@@ -51,6 +51,14 @@ console.log(strMaxLen);
 
 // Esercizio 7.7
 // Dato un array di oggetti { studente, voto }, usa i metodi degli array per calcolare la media dei voti.
+let somma = 0;
+
+let studenti = [{nome : "Ale", voto : 2}, {nome : "Tommy", voto : 3}, {nome : "Fil", voto : 8}]
+somma = studenti.reduce((sum, obj) => sum + obj.voto, 0)
+let mediaStudenti =  somma / studenti.length;
+
+console.log(somma, mediaStudenti);
+
 
 // Esercizio 7.8
 // Dato un array di numeri che può contenere duplicati, usa filter per creare un array senza duplicati (senza usare Set).
