@@ -10,6 +10,11 @@ console.log(triple);
 // Esercizio 7.2
 // Dato un array di stringhe, usa map per creare un nuovo array dove ogni stringa ha la prima lettera maiuscola e il resto minuscolo.
 
+let strings = ["Ciao", "come", "Va", "salice"]
+const stringUpper = strings.map((str) => str.charAt(0).toUpperCase() + str.slice(1).toLowerCase())
+console.log(stringUpper);
+
+
 // Esercizio 7.3
 // Dato un array di numeri, usa filter per ottenere solo i numeri maggiori di 10 e minori di 50.
 
