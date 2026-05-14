@@ -156,15 +156,15 @@ console.log(raggruppaSpesa(spesa));
 // Esercizio 6.10
 // Scrivi una funzione che confronti due oggetti e restituisca true se hanno le stesse proprietà con gli stessi valori (confronto superficiale).
 
-const confronto = (obj1,obj2) => {
+const confronto = (obj1, obj2) => {
     let uguali = true;
 
-    if(Object.keys(obj1).length != Object.keys(obj2)){
+    if (Object.keys(obj1).length != Object.keys(obj2)) {
         return "Oggetti diversi";
-    }else{
-        for(let i = 0; i < Object.keys(obj1).length; i++){
+    } else {
+        for (let i = 0; i < Object.keys(obj1).length; i++) {
             let chiave = Object.keys(obj1)[i];
-            if(!obj2[chiave] || obj1[chiave] != obj2[chiave]){
+            if (!obj2[chiave] || obj1[chiave] != obj2[chiave]) {
                 return "Oggetti diversi";
             }
         }
@@ -173,7 +173,7 @@ const confronto = (obj1,obj2) => {
     return "Oggetti uguali";
 };
 
-let libro2 = {...libro};
+let libro2 = { ...libro };
 libro2.titolo = "Ciao";
 
 console.log(confronto(libro, libro2));
