@@ -183,6 +183,32 @@ console.log(confronto(libro, libro2));
 // Esercizio 6.11
 // Crea un oggetto contoBancario con le proprietà titolare e saldo, e i metodi deposita, preleva e mostraSaldo. Il metodo preleva non deve permettere di andare in negativo.
 
+let contoBancario = {
+    titolare: "Filippo Granta",
+    saldo: 100,
+    deposita: function (importo) {
+        this.saldo += importo;
+    },
+    preleva: function (importo) {
+        if ((this.saldo - importo) < 0) {
+            console.log("Importo troppo elevato, riprovare");
+        } else {
+            this.saldo -= importo
+        }
+    },
+    mostraSaldo: function () {
+        console.log("Saldo:", this.saldo);
+    }
+};
+
+contoBancario.deposita(100);
+contoBancario.mostraSaldo();
+contoBancario.preleva(250);
+contoBancario.mostraSaldo();
+contoBancario.preleva(200);
+contoBancario.mostraSaldo();
+
+
 // Esercizio 6.12
 // Dato un oggetto annidato che rappresenta una struttura ad albero (un'azienda con dipartimenti e dipendenti), scrivi una funzione che conti il numero totale di dipendenti.
 
