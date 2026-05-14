@@ -212,6 +212,36 @@ contoBancario.mostraSaldo();
 // Esercizio 6.12
 // Dato un oggetto annidato che rappresenta una struttura ad albero (un'azienda con dipartimenti e dipendenti), scrivi una funzione che conti il numero totale di dipendenti.
 
+let azienda = {
+    nome: "TechCorp",
+    sviluppo: {
+        dipendenti: ["Alice", "Bob"],
+        frontend: {
+            dipendenti: ["Carlo", "Diana"]
+        }
+    },
+    marketing: {
+        dipendenti: ["Elena"]
+    }
+};
+
+const countDep = (azienda) => {
+    let count = 0;
+    for(chiave in azienda){
+        if(chiave === "dipendenti" && Array.isArray(azienda[chiave])){
+            count += azienda[chiave].length;
+        }else if( typeof azienda[chiave] == "object" && azienda[chiave] != null){
+            count += countDep(azienda[chiave]);
+         }
+    }
+
+    return count;
+};
+
+console.log(countDep(azienda));
+
+
+
 // Esercizio 6.13
 // Scrivi una funzione che accetti un array di oggetti e una chiave, e restituisca un nuovo array ordinato per il valore di quella chiave. Ad esempio, ordinare [{nome: "Zara", eta: 20}, {nome: "Anna", eta: 25}] per "nome".
 
