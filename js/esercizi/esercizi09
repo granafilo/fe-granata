@@ -320,6 +320,31 @@ console.log(funzioni[2]());
 console.log(funzioni[4]());
 // Esercizio 9.18
 // Scrivi una funzione creaValidatore che accetti un oggetto con regole di validazione (es. { minLength: 3, maxLength: 20, required: true }) e restituisca una funzione che valida una stringa secondo quelle regole, restituendo un array di messaggi di errore (vuoto se tutto ok).
+console.log("Esercizio 9.18");
+
+const creaValidatore = (regole) => {
+    return (stringa) => {
+        let errori = [];
+
+        if (regole.required && !stringa) {
+            errori.push("Campo obbligatorio");
+        }
+
+        if (regole.minLength !== undefined && stringa.length < regole.minLength) {
+            errori.push(`Lunghezza minima ${regole.minLength}`);
+        }
+
+        if (regole.maxLength !== undefined && stringa.length > regole.maxLength) {
+            errori.push(`Lunghezza massima ${regole.maxLength}`);
+        }
+
+        return errori;
+    };
+};
+
+let validaNome = creaValidatore({ minLength: 3, maxLength: 10, required: true });
+console.log(validaNome("Al"));
+console.log(validaNome("Alessandro"));
 
 // Esercizio 9.19
 // Scrivi una funzione creaRateLimiter che accetti un numero massimo di chiamate N e un intervallo di tempo T in millisecondi. Restituisce una funzione che, quando chiamata, restituisce true se non si è superato il limite, false altrimenti. Dopo T millisecondi, il contatore si resetta.
