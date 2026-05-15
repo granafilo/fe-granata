@@ -365,6 +365,21 @@ console.log(votiStudenti);
 
 // Esercizio 7.24
 // Scrivi una funzione che accetti un array e una funzione di raggruppamento, e restituisca un oggetto con gli elementi raggruppati (implementa una versione generica di groupBy).
+console.log("Esercizio 7.24");
+
+const raggruppaPer = (array, fun) => {
+    return array.reduce((acc, elem) => {
+        let chiave = fun(elem);
+        if (!acc[chiave]) {
+            acc[chiave] = [];
+        }
+        acc[chiave].push(elem);
+        return acc;
+    }, {});
+};
+
+console.log(raggruppaPer(numbers.slice(0, 20), (num) => num % 2 === 0 ? "pari" : "dispari"));
+
 
 // Esercizio 7.25
 // Dato un array di date (come stringhe "YYYY-MM-DD"), usa filter per ottenere solo le date di un mese specifico, poi ordinale dalla più recente alla più vecchia.
