@@ -261,6 +261,35 @@ console.log(contoAllaRovescia());
 
 // Esercizio 9.15
 // Scrivi una funzione creaStorico che restituisca un oggetto con i metodi aggiungi(valore), ultimo(), lista() e annulla(). annulla() rimuove l'ultimo valore aggiunto e lo restituisce.
+console.log("Esercizio 9.15");
+
+const creaStorico = () => {
+    let storico = [];
+
+    return {
+        aggiungi: function (valore) {
+            storico.push(valore);
+        },
+        ultimo: function () {
+            return storico[storico.length - 1];
+        },
+        lista: function () {
+            return [...storico];
+        },
+        annulla: function () {
+            return storico.pop();
+        }
+    };
+};
+
+let storico = creaStorico();
+storico.aggiungi(1);
+storico.aggiungi(2);
+storico.aggiungi(3);
+console.log(storico.ultimo());
+console.log(storico.lista());
+console.log(storico.annulla());
+console.log(storico.lista());
 
 // Esercizio 9.16
 // Scrivi una funzione creaGeneratoreId che restituisca una funzione che genera ID unici incrementali con un prefisso personalizzabile (es. "user_1", "user_2", ...).
