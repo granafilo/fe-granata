@@ -153,6 +153,39 @@ console.log(pipelineNumeri(5));
 
 // Esercizio 9.10
 // Scrivi una funzione creaLogger che accetti un prefisso e restituisca un oggetto con tre metodi: info, warn e error. Ogni metodo deve stampare il messaggio con il formato "[PREFISSO][LIVELLO] messaggio" e incrementare un contatore interno. Aggiungi anche un metodo statistiche che restituisca il conteggio dei messaggi per livello.
+console.log("Esercizio 9.10");
+
+const creaLogger = (prefisso) => {
+    let conteggi = {
+        info: 0,
+        warn: 0,
+        error: 0
+    };
+
+    return {
+        info: function (messaggio) {
+            conteggi.info++;
+            console.log(`[${prefisso}][INFO] ${messaggio}`);
+        },
+        warn: function (messaggio) {
+            conteggi.warn++;
+            console.log(`[${prefisso}][WARN] ${messaggio}`);
+        },
+        error: function (messaggio) {
+            conteggi.error++;
+            console.log(`[${prefisso}][ERROR] ${messaggio}`);
+        },
+        statistiche: function () {
+            return { ...conteggi };
+        }
+    };
+};
+
+let logger = creaLogger("APP");
+logger.info("Avvio completato");
+logger.warn("Memoria quasi piena");
+logger.error("Errore di test");
+console.log(logger.statistiche());
 
 // Esercizio 9.11
 // Senza eseguire il codice, prevedi l'output:
