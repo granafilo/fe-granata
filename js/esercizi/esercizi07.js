@@ -439,6 +439,21 @@ console.log(varianza);
 
 // Esercizio 7.28
 // Dato un array di parole, usa i metodi degli array per creare un indice: un oggetto dove ogni lettera dell'alfabeto è una chiave e il valore è un array di parole che iniziano con quella lettera.
+console.log("Esercizio 7.28");
+
+let paroleIndice = ["albero", "amico", "barca", "basso", "cane", "casa", "dado"];
+
+let indiceParole = paroleIndice.reduce((acc, parola) => {
+    let lettera = parola.charAt(0);
+    if (!acc[lettera]) {
+        acc[lettera] = [];
+    }
+    acc[lettera].push(parola);
+    return acc;
+}, {});
+
+console.log(indiceParole);
+
 
 // Esercizio 7.29
 // Scrivi una funzione zip che accetti due array e restituisca un array di coppie. Ad esempio, zip([1, 2, 3], ["a", "b", "c"]) restituisce [[1, "a"], [2, "b"], [3, "c"]]. Se gli array hanno lunghezza diversa, fermati al più corto.
