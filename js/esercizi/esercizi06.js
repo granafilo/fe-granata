@@ -572,5 +572,16 @@ console.log(inventario.valoreInventario());
 // Esercizio 6.23
 // Scrivi una funzione che accetti un array di oggetti e una funzione di confronto, e restituisca un oggetto con min e max secondo quel criterio.
 
+
+const minimoMassimo = (arr, compareFn) => {
+    return {
+        minimo: arr.reduce((min, curr) => compareFn(curr, min) < 0 ? curr : min),
+        massimo: arr.reduce((max, curr) => compareFn(curr, max) > 0 ? curr : max)
+    };
+};
+
+const persone = [{ nome: "Anna", eta: 25 }, { nome: "Carlo", eta: 30 }, { nome: "Bea", eta: 20 }];
+console.log(minimoMassimo(persone, (a, b) => a.eta - b.eta));
+
 // Esercizio 6.24
 // Scrivi una funzione che trasformi un array di coppie chiave-valore in un oggetto e viceversa. Ad esempio, [["a", 1], ["b", 2]] diventa { a: 1, b: 2 }.
