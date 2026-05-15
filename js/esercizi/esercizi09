@@ -348,6 +348,29 @@ console.log(validaNome("Alessandro"));
 
 // Esercizio 9.19
 // Scrivi una funzione creaRateLimiter che accetti un numero massimo di chiamate N e un intervallo di tempo T in millisecondi. Restituisce una funzione che, quando chiamata, restituisce true se non si è superato il limite, false altrimenti. Dopo T millisecondi, il contatore si resetta.
+console.log("Esercizio 9.19");
+
+const creaRateLimiter = (massimoChiamate, intervallo) => {
+    let chiamate = 0;
+
+    setTimeout(() => {
+        chiamate = 0;
+    }, intervallo);
+
+    return () => {
+        if (chiamate >= massimoChiamate) {
+            return false;
+        }
+
+        chiamate++;
+        return true;
+    };
+};
+
+let rateLimiter = creaRateLimiter(2, 1000);
+console.log(rateLimiter());
+console.log(rateLimiter());
+console.log(rateLimiter());
 
 // Esercizio 9.20
 // Scrivi una funzione creaStateMachine che accetti un oggetto che descrive gli stati e le transizioni possibili, e un stato iniziale. Restituisce un oggetto con stato() (restituisce lo stato corrente) e transizione(azione) (cambia stato secondo le regole). Se la transizione non è valida, lo stato non cambia.
