@@ -431,6 +431,57 @@ const trovaPercorso = (percorso, obj) => {
 console.log(trovaPercorso(percorsoUnd, utente));
 // Esercizio 6.19
 // Dato un array di oggetti che rappresentano transazioni { data, tipo, importo, categoria }, scrivi una funzione che restituisca un oggetto riepilogo con: totale entrate, totale uscite, saldo, e importo per categoria.
+const transazioni = [
+    { data: "2024-03-01", tipo: "entrata", importo: 1500, categoria: "stipendio" },
+    { data: "2024-03-02", tipo: "uscita", importo: 50, categoria: "spesa" },
+    { data: "2024-03-05", tipo: "uscita", importo: 100, categoria: "svago" },
+    { data: "2024-03-10", tipo: "entrata", importo: 200, categoria: "rimborso" },
+    { data: "2024-03-15", tipo: "uscita", importo: 450, categoria: "affitto" },
+    { data: "2024-03-17", tipo: "uscita", importo: 30, categoria: "spesa" },
+    { data: "2024-03-20", tipo: "uscita", importo: 80, categoria: "svago" }
+];
+
+let riepe = {
+    entrate: 0,
+    uscite: 0,
+    saldo: 0,
+    categoria: [
+        { Cibo: 100 }
+    ]
+}
+
+const riepilogo = (transazioni) => {
+    let entrate, uscite, saldo, importoCategoria;
+    let riepilogo = transazioni.reduce((riep, t) => {
+        //verifico che l'oggetto dedicato alla categoria esista
+        if (!riep.rCat[t.categoria]) {
+            riep.rCat[t.categoria] = 0;
+        }
+
+        if (t.tipo == "entrata") {
+            riep.entrate += t.importo;
+            riep.saldo += t.importo;
+            riep.rCat[t.categoria] += t.importo;
+        } else if (t.tipo == "uscita") {
+            riep.uscite += t.importo;
+            riep.saldo -= t.importo;
+            riep.rCat[t.categoria] -= t.importo;
+        }
+
+        return riep
+
+    }, {
+        saldo: 0,
+        entrate: 0,
+        uscite: 0,
+        rCat: {}
+    })
+
+    return riepilogo;
+};
+
+console.log(riepilogo(transazioni));
+
 
 // Esercizio 6.20
 // Scrivi una funzione che "appiattisca" un oggetto annidato. Ad esempio:
