@@ -207,6 +207,15 @@ console.log(a.leggi());
 console.log(b.leggi());
 // Esercizio 9.12
 // Scrivi una funzione creaFiltro che accetti una soglia minima e una soglia massima, e restituisca una funzione che accetta un numero e restituisce true se è nel range.
+console.log("Esercizio 9.12");
+
+const creaFiltro = (minimo, massimo) => {
+    return (numero) => numero >= minimo && numero <= massimo;
+};
+
+let filtroRange = creaFiltro(3, 8);
+console.log(filtroRange(5));
+console.log(filtroRange(10));
 
 // Esercizio 9.13
 // Scrivi una funzione debounce che accetti una funzione fn e un ritardo in millisecondi. Deve restituire una nuova funzione che, quando viene invocata, aspetta il ritardo prima di eseguire fn. Se viene invocata di nuovo prima che il ritardo scada, il timer si resetta.
