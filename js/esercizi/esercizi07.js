@@ -457,6 +457,19 @@ console.log(indiceParole);
 
 // Esercizio 7.29
 // Scrivi una funzione zip che accetti due array e restituisca un array di coppie. Ad esempio, zip([1, 2, 3], ["a", "b", "c"]) restituisce [[1, "a"], [2, "b"], [3, "c"]]. Se gli array hanno lunghezza diversa, fermati al più corto.
+console.log("Esercizio 7.29");
+
+const zip = (array1, array2) => {
+    let lunghezza = Math.min(array1.length, array2.length);
+    let coppie = [];
+    for (let i = 0; i < lunghezza; i++) {
+        coppie.push([array1[i], array2[i]]);
+    }
+    return coppie;
+};
+
+console.log(zip([1, 2, 3], ["a", "b", "c"]));
+
 
 // Esercizio 7.30
 // Dato un array di oggetti che rappresentano log di accesso { utente, data, azione }, scrivi una pipeline che:
