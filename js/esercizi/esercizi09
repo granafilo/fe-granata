@@ -236,6 +236,28 @@ stampaDebounced("Debounce 2");
 
 // Esercizio 9.14
 // Scrivi una funzione creaContoAllaRovescia che accetti un numero N e restituisca una funzione. Ogni volta che la funzione viene chiamata, restituisce il numero successivo nel conto alla rovescia (N, N-1, N-2, ..., 0). Dopo lo 0, restituisce sempre "Fine!".
+console.log("Esercizio 9.14");
+
+const creaContoAllaRovescia = (numeroIniziale) => {
+    let numeroCorrente = numeroIniziale;
+
+    return () => {
+        if (numeroCorrente < 0) {
+            return "Fine!";
+        }
+
+        let valore = numeroCorrente;
+        numeroCorrente--;
+        return valore;
+    };
+};
+
+let contoAllaRovescia = creaContoAllaRovescia(3);
+console.log(contoAllaRovescia());
+console.log(contoAllaRovescia());
+console.log(contoAllaRovescia());
+console.log(contoAllaRovescia());
+console.log(contoAllaRovescia());
 
 // Esercizio 9.15
 // Scrivi una funzione creaStorico che restituisca un oggetto con i metodi aggiungi(valore), ultimo(), lista() e annulla(). annulla() rimuove l'ultimo valore aggiunto e lo restituisce.
