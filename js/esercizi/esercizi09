@@ -31,6 +31,20 @@ esterna();
 console.log(a);
 // Esercizio 9.3
 // Scrivi una funzione creaAccumulatore che accetti un valore iniziale e restituisca una funzione. Ogni volta che la funzione restituita viene chiamata con un numero, deve aggiungerlo al totale e restituire il nuovo totale.
+console.log("Esercizio 9.3");
+
+const creaAccumulatore = (valoreIniziale) => {
+    let totale = valoreIniziale;
+
+    return (numero) => {
+        totale += numero;
+        return totale;
+    };
+};
+
+let accumulatore = creaAccumulatore(10);
+console.log(accumulatore(5));
+console.log(accumulatore(3));
 
 // Esercizio 9.4
 // Scrivi una funzione creaSaluto che accetti un saluto (es. "Ciao") e restituisca una funzione che accetti un nome e restituisca la frase completa.
