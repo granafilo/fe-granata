@@ -244,6 +244,21 @@ console.log(countDep(azienda));
 
 // Esercizio 6.13
 // Scrivi una funzione che accetti un array di oggetti e una chiave, e restituisca un nuovo array ordinato per il valore di quella chiave. Ad esempio, ordinare [{nome: "Zara", eta: 20}, {nome: "Anna", eta: 25}] per "nome".
+let arrObj = [{nome: "Zara", eta: 20}, {nome: "Anna", eta: 25}];
+const orderArrayByKey = (arr,key) => {
+    if(typeof arr[0][key] === 'string'){
+        console.log("Chiave stringa");
+        arrObj.sort((a,b) => a[key].localeCompare(b[key]))
+    }else if(typeof arr[0][key] === 'number'){
+        arrObj.sort((a,b) => a[key] - b[key])
+    }
+};
+
+orderArrayByKey(arrObj, 'eta');
+console.log(arrObj);
+console.log(typeof arrObj[0]['eta']);
+
+
 
 // Esercizio 6.14
 // Scrivi una funzione che accetti un oggetto e restituisca una copia profonda (deep clone) dell'oggetto, gestendo oggetti e array annidati. Non usare JSON.parse(JSON.stringify()).
