@@ -272,6 +272,20 @@ console.log(emailIt);
 
 // Esercizio 7.18
 // Dato un array di oggetti { nome, voti } (dove voti è un array di numeri), usa map per creare un nuovo array dove ogni oggetto ha una proprietà aggiuntiva media.
+console.log("Esercizio 7.18");
+
+let studentiVoti = [
+    { nome: "Anna", voti: [8, 7, 9] },
+    { nome: "Luca", voti: [6, 7, 7] },
+    { nome: "Marta", voti: [9, 10, 8] }
+];
+
+let studentiMedia = studentiVoti.map((studente) => ({
+    ...studente,
+    media: studente.voti.reduce((somma, voto) => somma + voto, 0) / studente.voti.length
+}));
+
+console.log(studentiMedia);
 
 // Esercizio 7.19
 // Dato un array di frasi (stringhe), usa flatMap per ottenere un array di tutte le singole parole, tutte in minuscolo.
