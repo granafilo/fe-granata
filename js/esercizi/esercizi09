@@ -81,6 +81,25 @@ console.log(unaVolta(10));
 
 // Esercizio 9.6
 // Scrivi una funzione limitaChiamate che accetti una funzione e un numero N, e restituisca una nuova funzione che esegue la funzione originale solo per le prime N chiamate. Dalla chiamata N+1 in poi, restituisce undefined.
+console.log("Esercizio 9.6");
+
+const limitaChiamate = (fn, limite) => {
+    let chiamate = 0;
+
+    return (...args) => {
+        if (chiamate >= limite) {
+            return undefined;
+        }
+
+        chiamate++;
+        return fn(...args);
+    };
+};
+
+let limiteTre = limitaChiamate((numero) => numero + 1, 2);
+console.log(limiteTre(1));
+console.log(limiteTre(2));
+console.log(limiteTre(3));
 
 // Esercizio 9.7
 // Scrivi una funzione creaRange che accetti un minimo e un massimo, e restituisca una funzione che verifica se un numero è compreso nel range.
