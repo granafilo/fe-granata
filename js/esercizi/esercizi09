@@ -293,6 +293,20 @@ console.log(storico.lista());
 
 // Esercizio 9.16
 // Scrivi una funzione creaGeneratoreId che restituisca una funzione che genera ID unici incrementali con un prefisso personalizzabile (es. "user_1", "user_2", ...).
+console.log("Esercizio 9.16");
+
+const creaGeneratoreId = (prefisso) => {
+    let contatore = 0;
+
+    return () => {
+        contatore++;
+        return `${prefisso}_${contatore}`;
+    };
+};
+
+let generaUtente = creaGeneratoreId("user");
+console.log(generaUtente());
+console.log(generaUtente());
 
 // Esercizio 9.17
 // Senza eseguire il codice, prevedi l'output:
