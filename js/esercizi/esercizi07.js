@@ -300,6 +300,18 @@ console.log(paroleMinuscole);
 
 // Esercizio 7.20
 // Dato un array di numeri, usa reduce per creare un oggetto che separi i numeri in { pari: [...], dispari: [...] }.
+console.log("Esercizio 7.20");
+
+let pariDispari = numbers.slice(0, 20).reduce((acc, num) => {
+    if (num % 2 === 0) {
+        acc.pari.push(num);
+    } else {
+        acc.dispari.push(num);
+    }
+    return acc;
+}, { pari: [], dispari: [] });
+
+console.log(pariDispari);
 
 // Esercizio 7.21
 // Dato un array di oggetti { nome, eta }, usa sort e slice per ottenere i 3 più anziani.
