@@ -219,6 +219,20 @@ console.log(filtroRange(10));
 
 // Esercizio 9.13
 // Scrivi una funzione debounce che accetti una funzione fn e un ritardo in millisecondi. Deve restituire una nuova funzione che, quando viene invocata, aspetta il ritardo prima di eseguire fn. Se viene invocata di nuovo prima che il ritardo scada, il timer si resetta.
+console.log("Esercizio 9.13");
+
+const debounce = (fn, ritardo) => {
+    let timer;
+
+    return (...args) => {
+        clearTimeout(timer);
+        timer = setTimeout(() => fn(...args), ritardo);
+    };
+};
+
+let stampaDebounced = debounce((messaggio) => console.log(messaggio), 50);
+stampaDebounced("Debounce 1");
+stampaDebounced("Debounce 2");
 
 // Esercizio 9.14
 // Scrivi una funzione creaContoAllaRovescia che accetti un numero N e restituisca una funzione. Ogni volta che la funzione viene chiamata, restituisce il numero successivo nel conto alla rovescia (N, N-1, N-2, ..., 0). Dopo lo 0, restituisce sempre "Fine!".
