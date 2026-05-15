@@ -137,6 +137,19 @@ console.log(sommaMemo(2, 3));
 
 // Esercizio 9.9
 // Scrivi una funzione pipeline che accetti un numero variabile di funzioni e restituisca una nuova funzione che le esegue in sequenza, passando il risultato di ciascuna come input della successiva.
+console.log("Esercizio 9.9");
+
+const pipeline = (...funzioni) => {
+    return (valore) => funzioni.reduce((acc, funzione) => funzione(acc), valore);
+};
+
+let pipelineNumeri = pipeline(
+    (numero) => numero + 2,
+    (numero) => numero * 3,
+    (numero) => numero - 1
+);
+
+console.log(pipelineNumeri(5));
 
 // Esercizio 9.10
 // Scrivi una funzione creaLogger che accetti un prefisso e restituisca un oggetto con tre metodi: info, warn e error. Ogni metodo deve stampare il messaggio con il formato "[PREFISSO][LIVELLO] messaggio" e incrementare un contatore interno. Aggiungi anche un metodo statistiche che restituisca il conteggio dei messaggi per livello.
