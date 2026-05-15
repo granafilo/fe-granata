@@ -266,6 +266,21 @@ console.log(typeof arrObj[0]['eta']);
 // Esercizio 6.15
 // Scrivi una funzione pick che accetti un oggetto e un array di chiavi, e restituisca un nuovo oggetto con solo quelle proprietà.
 
+const pick = (obj, arrKey) => {
+    let newObj = {};
+    for(let chiave of arrKey){
+        
+        if(chiave in obj ){
+            newObj[chiave] = obj[chiave];
+        }
+    }
+
+    return newObj;
+};
+
+console.log(pick({nome: "Fil", eta : 10}, ["nome", "eta"]));
+
+
 // Esercizio 6.16
 // Scrivi una funzione omit che accetti un oggetto e un array di chiavi, e restituisca un nuovo oggetto senza quelle proprietà.
 
