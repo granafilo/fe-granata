@@ -59,6 +59,25 @@ console.log(saluta("Filippo"));
 
 // Esercizio 9.5
 // Scrivi una funzione once che accetti una funzione fn e restituisca una nuova funzione che può essere chiamata al massimo una volta. Le chiamate successive devono restituire il risultato della prima chiamata.
+console.log("Esercizio 9.5");
+
+const once = (fn) => {
+    let eseguito = false;
+    let risultato;
+
+    return (...args) => {
+        if (!eseguito) {
+            risultato = fn(...args);
+            eseguito = true;
+        }
+
+        return risultato;
+    };
+};
+
+let unaVolta = once((numero) => numero * 2);
+console.log(unaVolta(4));
+console.log(unaVolta(10));
 
 // Esercizio 9.6
 // Scrivi una funzione limitaChiamate che accetti una funzione e un numero N, e restituisca una nuova funzione che esegue la funzione originale solo per le prime N chiamate. Dalla chiamata N+1 in poi, restituisce undefined.
