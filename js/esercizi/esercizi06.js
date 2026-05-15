@@ -227,12 +227,12 @@ let azienda = {
 
 const countDep = (azienda) => {
     let count = 0;
-    for(chiave in azienda){
-        if(chiave === "dipendenti" && Array.isArray(azienda[chiave])){
+    for (chiave in azienda) {
+        if (chiave === "dipendenti" && Array.isArray(azienda[chiave])) {
             count += azienda[chiave].length;
-        }else if( typeof azienda[chiave] == "object" && azienda[chiave] != null){
+        } else if (typeof azienda[chiave] == "object" && azienda[chiave] != null) {
             count += countDep(azienda[chiave]);
-         }
+        }
     }
 
     return count;
@@ -244,13 +244,13 @@ console.log(countDep(azienda));
 
 // Esercizio 6.13
 // Scrivi una funzione che accetti un array di oggetti e una chiave, e restituisca un nuovo array ordinato per il valore di quella chiave. Ad esempio, ordinare [{nome: "Zara", eta: 20}, {nome: "Anna", eta: 25}] per "nome".
-let arrObj = [{nome: "Zara", eta: 20}, {nome: "Anna", eta: 25}];
-const orderArrayByKey = (arr,key) => {
-    if(typeof arr[0][key] === 'string'){
+let arrObj = [{ nome: "Zara", eta: 20 }, { nome: "Anna", eta: 25 }];
+const orderArrayByKey = (arr, key) => {
+    if (typeof arr[0][key] === 'string') {
         console.log("Chiave stringa");
-        arrObj.sort((a,b) => a[key].localeCompare(b[key]))
-    }else if(typeof arr[0][key] === 'number'){
-        arrObj.sort((a,b) => a[key] - b[key])
+        arrObj.sort((a, b) => a[key].localeCompare(b[key]))
+    } else if (typeof arr[0][key] === 'number') {
+        arrObj.sort((a, b) => a[key] - b[key])
     }
 };
 
@@ -263,14 +263,18 @@ console.log(typeof arrObj[0]['eta']);
 // Esercizio 6.14
 // Scrivi una funzione che accetti un oggetto e restituisca una copia profonda (deep clone) dell'oggetto, gestendo oggetti e array annidati. Non usare JSON.parse(JSON.stringify()).
 
+const objToCp = (obj) => {
+
+};
+
 // Esercizio 6.15
 // Scrivi una funzione pick che accetti un oggetto e un array di chiavi, e restituisca un nuovo oggetto con solo quelle proprietà.
 
 const pick = (obj, arrKey) => {
     let newObj = {};
-    for(let chiave of arrKey){
-        
-        if(chiave in obj ){
+    for (let chiave of arrKey) {
+
+        if (chiave in obj) {
             newObj[chiave] = obj[chiave];
         }
     }
@@ -278,7 +282,7 @@ const pick = (obj, arrKey) => {
     return newObj;
 };
 
-console.log(pick({nome: "Fil", eta : 10}, ["nome", "eta"]));
+console.log(pick({ nome: "Fil", eta: 10 }, ["nome", "eta"]));
 
 
 // Esercizio 6.16
@@ -286,21 +290,99 @@ console.log(pick({nome: "Fil", eta : 10}, ["nome", "eta"]));
 let newObj = {};
 const omit = (obj, arrKey) => {
     let newObj = structuredClone(obj);
-    
-    for(let chiave of arrKey){
-        if(chiave in obj ){
+
+    for (let chiave of arrKey) {
+        if (chiave in obj) {
             delete newObj[chiave];
         }
     }
-    
+
     return newObj;
 };
 
-console.log(omit({nome: "Fil", eta : 10}, ["eta"]));
+console.log(omit({ nome: "Fil", eta: 10 }, ["eta"]));
 
 
 // Esercizio 6.17
 // Crea un oggetto rubrica con un array interno di contatti (ciascuno con nome, telefono, email). Aggiungi i metodi: aggiungiContatto, rimuoviContatto, cercaPerNome, cercaPerTelefono e mostraTutti.
+
+let rubrica = {
+    contatti: [
+        {
+            nome: "F",
+            cognome: "G",
+            telefono: "3394290454",
+            email: "fg@gmail.com"
+        },
+        {
+            nome: "A",
+            cognome: "C",
+            telefono: "123456789",
+            email: "ac@libero.it"
+        },
+        {
+            nome: "T",
+            cognome: "V",
+            telefono: "987654321",
+            email: "tv@alice.it"
+        }
+    ],
+    aggiungiContatto: function (contatto) {
+        this.contatti.unshift(contatto);
+    },
+    rimuoviContatto: function(contatto){
+        for(let i in this.contatti){
+            if(this.contatti[i] == contatto){
+                console.log("contatto uguale", i);
+                this.contatti.splice(i, 1);
+                console.log(this.contatti);
+                
+            }
+        }
+    },
+    cercaPerNome: function(nome, cognome){
+        for(let i in this.contatti){
+            if(this.contatti[i].nome == nome && this.contatti[i].cognome == cognome){
+                console.log("Contatto trovato");
+                console.log(this.contatti[i]);
+                return this.contatti[i];
+            }
+        }
+        console.log("Contatto non trovato");
+    },
+    cercaPerTelefono: function(tel){
+        for(let i in this.contatti){
+            if(this.contatti[i].telefono == tel){
+                console.log("Contatto trovato");
+                console.log(this.contatti[i]);
+                return this.contatti[i];
+            }
+        }
+        console.log("Contatto non trovato");
+    },
+    mostraTutti: function(){
+        console.log("\nRubrica: ", this.contatti);   
+    }
+
+};
+
+let contatto = {
+    nome: "M",
+    cognome: "F",
+    telefono: "456123789",
+    email: "mf@max.com"
+}
+
+// console.log(rubrica.contatti);
+rubrica.aggiungiContatto(contatto);
+// console.log(rubrica.contatti);
+// rubrica.rimuoviContatto(contatto);
+// console.log(rubrica.contatti);
+// rubrica.cercaPerNome("F", "G");
+// let contattoTrovato = rubrica.cercaPerNome("F", "G");
+rubrica.cercaPerTelefono("3394290454")
+
+// rubrica.mostraTutti();
 
 // Esercizio 6.18
 // Scrivi una funzione che accetti un oggetto con proprietà annidate e un "percorso" come stringa (es. "indirizzo.citta") e restituisca il valore corrispondente, oppure undefined se il percorso non esiste.

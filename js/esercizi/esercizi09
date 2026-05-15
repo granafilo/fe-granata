@@ -1,0 +1,106 @@
+// Esercizio 9.1
+// Senza eseguire il codice, prevedi l'output di questo programma, poi verificalo:
+
+let x = 10;
+
+const foo = () => {
+    let x = 20;
+    console.log(x);
+};
+
+foo();
+console.log(x);
+// Esercizio 9.2
+// Senza eseguire il codice, prevedi l'output:
+
+const a = 1;
+
+const esterna = () => {
+    const b = 2;
+
+    const interna = () => {
+        const c = 3;
+        console.log(a, b, c);
+    };
+
+    interna();
+    console.log(a, b);
+};
+
+esterna();
+console.log(a);
+// Esercizio 9.3
+// Scrivi una funzione creaAccumulatore che accetti un valore iniziale e restituisca una funzione. Ogni volta che la funzione restituita viene chiamata con un numero, deve aggiungerlo al totale e restituire il nuovo totale.
+
+// Esercizio 9.4
+// Scrivi una funzione creaSaluto che accetti un saluto (es. "Ciao") e restituisca una funzione che accetti un nome e restituisca la frase completa.
+
+// Esercizio 9.5
+// Scrivi una funzione once che accetti una funzione fn e restituisca una nuova funzione che può essere chiamata al massimo una volta. Le chiamate successive devono restituire il risultato della prima chiamata.
+
+// Esercizio 9.6
+// Scrivi una funzione limitaChiamate che accetti una funzione e un numero N, e restituisca una nuova funzione che esegue la funzione originale solo per le prime N chiamate. Dalla chiamata N+1 in poi, restituisce undefined.
+
+// Esercizio 9.7
+// Scrivi una funzione creaRange che accetti un minimo e un massimo, e restituisca una funzione che verifica se un numero è compreso nel range.
+
+// Esercizio 9.8
+// Scrivi una funzione memoize che accetti una funzione e restituisca una versione "memorizzata" di essa. Se la funzione viene chiamata con gli stessi argomenti, deve restituire il risultato precedente senza rieseguire il calcolo.
+
+// Esercizio 9.9
+// Scrivi una funzione pipeline che accetti un numero variabile di funzioni e restituisca una nuova funzione che le esegue in sequenza, passando il risultato di ciascuna come input della successiva.
+
+// Esercizio 9.10
+// Scrivi una funzione creaLogger che accetti un prefisso e restituisca un oggetto con tre metodi: info, warn e error. Ogni metodo deve stampare il messaggio con il formato "[PREFISSO][LIVELLO] messaggio" e incrementare un contatore interno. Aggiungi anche un metodo statistiche che restituisca il conteggio dei messaggi per livello.
+
+// Esercizio 9.11
+// Senza eseguire il codice, prevedi l'output:
+
+const crea = () => {
+    let x = 0;
+    return {
+        incrementa: () => { x++; },
+        leggi: () => x
+    };
+};
+
+const a = crea();
+const b = crea();
+a.incrementa();
+a.incrementa();
+b.incrementa();
+console.log(a.leggi());
+console.log(b.leggi());
+// Esercizio 9.12
+// Scrivi una funzione creaFiltro che accetti una soglia minima e una soglia massima, e restituisca una funzione che accetta un numero e restituisce true se è nel range.
+
+// Esercizio 9.13
+// Scrivi una funzione debounce che accetti una funzione fn e un ritardo in millisecondi. Deve restituire una nuova funzione che, quando viene invocata, aspetta il ritardo prima di eseguire fn. Se viene invocata di nuovo prima che il ritardo scada, il timer si resetta.
+
+// Esercizio 9.14
+// Scrivi una funzione creaContoAllaRovescia che accetti un numero N e restituisca una funzione. Ogni volta che la funzione viene chiamata, restituisce il numero successivo nel conto alla rovescia (N, N-1, N-2, ..., 0). Dopo lo 0, restituisce sempre "Fine!".
+
+// Esercizio 9.15
+// Scrivi una funzione creaStorico che restituisca un oggetto con i metodi aggiungi(valore), ultimo(), lista() e annulla(). annulla() rimuove l'ultimo valore aggiunto e lo restituisce.
+
+// Esercizio 9.16
+// Scrivi una funzione creaGeneratoreId che restituisca una funzione che genera ID unici incrementali con un prefisso personalizzabile (es. "user_1", "user_2", ...).
+
+// Esercizio 9.17
+// Senza eseguire il codice, prevedi l'output:
+
+const funzioni = [];
+for (let i = 0; i < 5; i++) {
+    funzioni.push(() => i * 2);
+}
+console.log(funzioni[0]());
+console.log(funzioni[2]());
+console.log(funzioni[4]());
+// Esercizio 9.18
+// Scrivi una funzione creaValidatore che accetti un oggetto con regole di validazione (es. { minLength: 3, maxLength: 20, required: true }) e restituisca una funzione che valida una stringa secondo quelle regole, restituendo un array di messaggi di errore (vuoto se tutto ok).
+
+// Esercizio 9.19
+// Scrivi una funzione creaRateLimiter che accetti un numero massimo di chiamate N e un intervallo di tempo T in millisecondi. Restituisce una funzione che, quando chiamata, restituisce true se non si è superato il limite, false altrimenti. Dopo T millisecondi, il contatore si resetta.
+
+// Esercizio 9.20
+// Scrivi una funzione creaStateMachine che accetti un oggetto che descrive gli stati e le transizioni possibili, e un stato iniziale. Restituisce un oggetto con stato() (restituisce lo stato corrente) e transizione(azione) (cambia stato secondo le regole). Se la transizione non è valida, lo stato non cambia.
