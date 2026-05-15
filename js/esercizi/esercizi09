@@ -115,6 +115,25 @@ console.log(nelRange(25));
 
 // Esercizio 9.8
 // Scrivi una funzione memoize che accetti una funzione e restituisca una versione "memorizzata" di essa. Se la funzione viene chiamata con gli stessi argomenti, deve restituire il risultato precedente senza rieseguire il calcolo.
+console.log("Esercizio 9.8");
+
+const memoize = (fn) => {
+    let cache = {};
+
+    return (...args) => {
+        let chiave = JSON.stringify(args);
+
+        if (!(chiave in cache)) {
+            cache[chiave] = fn(...args);
+        }
+
+        return cache[chiave];
+    };
+};
+
+let sommaMemo = memoize((a, b) => a + b);
+console.log(sommaMemo(2, 3));
+console.log(sommaMemo(2, 3));
 
 // Esercizio 9.9
 // Scrivi una funzione pipeline che accetti un numero variabile di funzioni e restituisca una nuova funzione che le esegue in sequenza, passando il risultato di ciascuna come input della successiva.
