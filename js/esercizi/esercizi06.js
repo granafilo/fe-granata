@@ -508,6 +508,32 @@ console.log(appiattisciObj({ a: 1, b: { c: 2, d: { e: 3 } } }));
 // Esercizio 6.21
 // Scrivi una funzione che accetti due oggetti e restituisca un oggetto che descrive le differenze: proprietà aggiunte, rimosse e modificate.
 
+const differenzeObj = (obj1, obj2) => {
+    let differenze = {
+        aggiunte: {},
+        rimosse: {},
+        modificate: {}
+    };
+
+    for (let chiave in obj1) {
+        if (!(chiave in obj2)) {
+            differenze.rimosse[chiave] = obj1[chiave];
+        } else if (obj1[chiave] !== obj2[chiave]) {
+            differenze.modificate[chiave] = { prima: obj1[chiave], dopo: obj2[chiave] };
+        }
+    }
+
+    for (let chiave in obj2) {
+        if (!(chiave in obj1)) {
+            differenze.aggiunte[chiave] = obj2[chiave];
+        }
+    }
+
+    return differenze;
+};
+
+console.log(differenzeObj({ a: 1, b: 2 }, { a: 1, b: 3, c: 4 }));
+
 // Esercizio 6.22
 // Crea un oggetto inventario che gestisca prodotti. Ogni prodotto ha nome, prezzo, quantita e categoria. Aggiungi i metodi: aggiungiProdotto, rimuoviProdotto, aggiornaProdotto, cercaPerCategoria, prodottiSottoscorta(soglia) e valoreInventario.
 
