@@ -387,6 +387,48 @@ rubrica.cercaPerTelefono("3394290454")
 // Esercizio 6.18
 // Scrivi una funzione che accetti un oggetto con proprietà annidate e un "percorso" come stringa (es. "indirizzo.citta") e restituisca il valore corrispondente, oppure undefined se il percorso non esiste.
 
+const utente = {
+    id: 1,
+    username: "tech_lover",
+    profilo: {
+        nome: "Luca",
+        cognome: "Rossi",
+        contatti: {
+            email: "luca.rossi@esempio.it",
+            social: {
+                twitter: "@lucarossi_dev",
+                linkedin: "linkedin.com/in/lucarossi"
+            }
+        }
+    },
+    preferenze: {
+        notifiche: true,
+        temi: ["dark", "high-contrast"]
+    },
+    indirizzo: {
+        citta: "Milano",
+        cap: 20100
+        // Nota: la proprietà 'via' qui manca appositamente per testare l'undefined
+    }
+};
+
+let percorso = "indirizzo.citta";
+let percorsoUnd = "indirizzo.via";
+
+const trovaPercorso = (percorso, obj) => {
+    let arrPercorso = percorso.split('.');
+    console.log(arrPercorso);
+
+    //prev iniziale pari a utente, corr pari a arrPercorso[0] inizialmente, itera ad ogni ciclo
+    let risultato = arrPercorso.reduce((prev, corr) => {
+        //se prev esiste e prev[corr] non è undefined ovvero esiste il percorso prev.corr allora restituisco prev.corr
+        return (prev && prev[corr] !== undefined) ? prev[corr] : undefined;
+    }, utente);
+
+    return risultato;
+};
+
+console.log(trovaPercorso(percorsoUnd, utente));
 // Esercizio 6.19
 // Dato un array di oggetti che rappresentano transazioni { data, tipo, importo, categoria }, scrivi una funzione che restituisca un oggetto riepilogo con: totale entrate, totale uscite, saldo, e importo per categoria.
 
