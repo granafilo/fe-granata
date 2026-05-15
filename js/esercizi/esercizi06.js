@@ -537,6 +537,38 @@ console.log(differenzeObj({ a: 1, b: 2 }, { a: 1, b: 3, c: 4 }));
 // Esercizio 6.22
 // Crea un oggetto inventario che gestisca prodotti. Ogni prodotto ha nome, prezzo, quantita e categoria. Aggiungi i metodi: aggiungiProdotto, rimuoviProdotto, aggiornaProdotto, cercaPerCategoria, prodottiSottoscorta(soglia) e valoreInventario.
 
+let inventario = {
+    prodotti: [],
+    aggiungiProdotto: function (prodotto) {
+        this.prodotti.push(prodotto);
+    },
+    rimuoviProdotto: function (nome) {
+        this.prodotti = this.prodotti.filter(p => p.nome !== nome);
+    },
+    aggiornaProdotto: function (nome, aggiornamenti) {
+        let prodotto = this.prodotti.find(p => p.nome === nome);
+        if (prodotto) {
+            Object.assign(prodotto, aggiornamenti);
+        }
+    },
+    cercaPerCategoria: function (categoria) {
+        return this.prodotti.filter(p => p.categoria === categoria);
+    },
+    prodottiSottoscorta: function (soglia) {
+        return this.prodotti.filter(p => p.quantita < soglia);
+    },
+    valoreInventario: function () {
+        return this.prodotti.reduce((totale, p) => totale + (p.prezzo * p.quantita), 0);
+    }
+};
+
+inventario.aggiungiProdotto({ nome: "Laptop", prezzo: 800, quantita: 5, categoria: "Elettronica" });
+inventario.aggiungiProdotto({ nome: "Mouse", prezzo: 20, quantita: 2, categoria: "Accessori" });
+inventario.aggiungiProdotto({ nome: "Tastiera", prezzo: 50, quantita: 3, categoria: "Accessori" });
+console.log(inventario.cercaPerCategoria("Accessori"));
+console.log(inventario.prodottiSottoscorta(4));
+console.log(inventario.valoreInventario());
+
 // Esercizio 6.23
 // Scrivi una funzione che accetti un array di oggetti e una funzione di confronto, e restituisca un oggetto con min e max secondo quel criterio.
 
