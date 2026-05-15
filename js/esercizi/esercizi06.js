@@ -585,3 +585,17 @@ console.log(minimoMassimo(persone, (a, b) => a.eta - b.eta));
 
 // Esercizio 6.24
 // Scrivi una funzione che trasformi un array di coppie chiave-valore in un oggetto e viceversa. Ad esempio, [["a", 1], ["b", 2]] diventa { a: 1, b: 2 }.
+
+const pairsToObj = (pairs) => {
+    return pairs.reduce((obj, [key, value]) => {
+        obj[key] = value;
+        return obj;
+    }, {});
+};
+
+const objToPairs = (obj) => {
+    return Object.entries(obj);
+};
+
+console.log(pairsToObj([["a", 1], ["b", 2]]));
+console.log(objToPairs({ a: 1, b: 2 }));
