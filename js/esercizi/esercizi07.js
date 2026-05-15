@@ -185,8 +185,8 @@ const persFilter = (array, fun) => {
     return arrayOutput;
 };
 
-console.log("FILTER: ",numbers.filter((num) => num % 2 === 0));
-console.log("PERSONAL FILTER: ",persFilter(numbers, (num) => num % 2 == 0));
+console.log("FILTER: ", numbers.filter((num) => num % 2 === 0));
+console.log("PERSONAL FILTER: ", persFilter(numbers, (num) => num % 2 == 0));
 
 const persReduce = (array, fun) => {
     let output = 0;
@@ -202,11 +202,11 @@ console.log("PERSONAL REDUCE: ", persReduce(numbers, (prev, curr) => prev + curr
 
 // Esercizio 7.15
 // Dato un array di oggetti che rappresentano ordini { cliente, prodotto, quantita, prezzoUnitario }, scrivi una pipeline che,:
-let ordini = [{cliente: "Fil", prodotto: "Loacker", quantita : 10, prezzoUnitario : 2.5},
-    {cliente: "Fil", prodotto: "Barrette", quantita : 10, prezzoUnitario : 8},
-    {cliente: "Tommy", prodotto: "Pane", quantita : 8, prezzoUnitario : 1},
-    {cliente: "Fil", prodotto: "Acqua", quantita : 25, prezzoUnitario : 5},
-    {cliente: "Ale", prodotto: "CocaCola", quantita : 2, prezzoUnitario : 15}
+let ordini = [{ cliente: "Fil", prodotto: "Loacker", quantita: 10, prezzoUnitario: 2.5 },
+{ cliente: "Fil", prodotto: "Barrette", quantita: 10, prezzoUnitario: 8 },
+{ cliente: "Tommy", prodotto: "Pane", quantita: 8, prezzoUnitario: 1 },
+{ cliente: "Fil", prodotto: "Acqua", quantita: 25, prezzoUnitario: 5 },
+{ cliente: "Ale", prodotto: "CocaCola", quantita: 2, prezzoUnitario: 15 }
 ]
 
 console.log("Esercizio 7.15");
@@ -214,8 +214,8 @@ console.log("Esercizio 7.15");
 // Calcoli il totale di ogni ordine
 
 let totaleOrdine = ordini.map((ord, i) => ({
-    index : i,
-    totale : (ord.quantita * ord.prezzoUnitario)
+    index: i,
+    totale: (ord.quantita * ord.prezzoUnitario)
 }));
 console.log(totaleOrdine);
 
@@ -223,7 +223,7 @@ console.log(totaleOrdine);
 // Raggruppi gli ordini per cliente
 
 let groupOrdini = ordini.reduce((acc, curr) => {
-    if(!acc[curr.cliente]){
+    if (!acc[curr.cliente]) {
         acc[curr.cliente] = [];
     }
     acc[curr.cliente].push(curr);
@@ -240,7 +240,7 @@ let totaleClienti = Object.entries(groupOrdini).map(([cliente, ordini]) => {
         return (prevOrd + (currOrd.quantita * currOrd.prezzoUnitario));
     }, 0)
     
-    return {cliente: cliente, totale: totCliente};
+    return { cliente: cliente, totale: totCliente };
 })
 
 console.log("Spesa totale per clienti: ", totaleClienti);
@@ -248,6 +248,17 @@ console.log("Spesa totale per clienti: ", totaleClienti);
 
 // Esercizio 7.16
 // Dato un array di numeri, usa map per generare un array di oggetti { valore, quadrato, cubo } per ciascun numero.
+console.log("Esercizio 7.16");
+
+let valori = numbers.slice(0, 10);
+
+let oggettiValori = valori.map((num) => ({
+    valore: num,
+    quadrato: num * num,
+    cubo: num * num * num
+}));
+
+console.log(oggettiValori);
 
 // Esercizio 7.17
 // Dato un array di stringhe che rappresentano indirizzi email, usa filter per ottenere solo quelli che terminano con ".it".
