@@ -486,8 +486,25 @@ console.log(riepilogo(transazioni));
 // Esercizio 6.20
 // Scrivi una funzione che "appiattisca" un oggetto annidato. Ad esempio:
 
-// // Input: { a: 1, b: { c: 2, d: { e: 3 } } }
-// // Output: { "a": 1, "b.c": 2, "b.d.e": 3 }
+// Input: { a: 1, b: { c: 2, d: { e: 3 } } }
+// Output: { "a": 1, "b.c": 2, "b.d.e": 3 }
+
+const appiattisciObj = (obj, prefix = '') => {
+    let appiattito = {};
+    for (let chiave in obj) {
+        let nuovaChiave = prefix ? `${prefix}.${chiave}` : chiave;
+        if (typeof obj[chiave] === 'object' && obj[chiave] !== null && !Array.isArray(obj[chiave])) {
+            Object.assign(appiattito, appiattisciObj(obj[chiave], nuovaChiave));
+        } else {
+            appiattito[nuovaChiave] = obj[chiave];
+        }
+    }
+    return appiattito;
+};
+
+console.log(appiattisciObj({ a: 1, b: { c: 2, d: { e: 3 } } }));
+
+
 // Esercizio 6.21
 // Scrivi una funzione che accetti due oggetti e restituisca un oggetto che descrive le differenze: proprietà aggiunte, rimosse e modificate.
 
