@@ -262,6 +262,13 @@ console.log(oggettiValori);
 
 // Esercizio 7.17
 // Dato un array di stringhe che rappresentano indirizzi email, usa filter per ottenere solo quelli che terminano con ".it".
+console.log("Esercizio 7.17");
+
+let emaili = ["filippo@esempio.it", "test@example.com", "anna@dominio.it", "mario@site.org"];
+
+let emailIt = emaili.filter((email) => email.endsWith(".it"));
+
+console.log(emailIt);
 
 // Esercizio 7.18
 // Dato un array di oggetti { nome, voti } (dove voti è un array di numeri), usa map per creare un nuovo array dove ogni oggetto ha una proprietà aggiuntiva media.
