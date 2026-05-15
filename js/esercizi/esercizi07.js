@@ -239,7 +239,7 @@ let totaleClienti = Object.entries(groupOrdini).map(([cliente, ordini]) => {
     let totCliente = ordini.reduce((prevOrd, currOrd) => {
         return (prevOrd + (currOrd.quantita * currOrd.prezzoUnitario));
     }, 0)
-    
+
     return { cliente: cliente, totale: totCliente };
 })
 
