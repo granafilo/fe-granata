@@ -283,6 +283,21 @@ console.log(pick({nome: "Fil", eta : 10}, ["nome", "eta"]));
 
 // Esercizio 6.16
 // Scrivi una funzione omit che accetti un oggetto e un array di chiavi, e restituisca un nuovo oggetto senza quelle proprietà.
+let newObj = {};
+const omit = (obj, arrKey) => {
+    let newObj = structuredClone(obj);
+    
+    for(let chiave of arrKey){
+        if(chiave in obj ){
+            delete newObj[chiave];
+        }
+    }
+    
+    return newObj;
+};
+
+console.log(omit({nome: "Fil", eta : 10}, ["eta"]));
+
 
 // Esercizio 6.17
 // Crea un oggetto rubrica con un array interno di contatti (ciascuno con nome, telefono, email). Aggiungi i metodi: aggiungiContatto, rimuoviContatto, cercaPerNome, cercaPerTelefono e mostraTutti.
