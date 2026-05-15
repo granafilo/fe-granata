@@ -48,6 +48,14 @@ console.log(accumulatore(3));
 
 // Esercizio 9.4
 // Scrivi una funzione creaSaluto che accetti un saluto (es. "Ciao") e restituisca una funzione che accetti un nome e restituisca la frase completa.
+console.log("Esercizio 9.4");
+
+const creaSaluto = (saluto) => {
+    return (nome) => `${saluto} ${nome}`;
+};
+
+let saluta = creaSaluto("Ciao");
+console.log(saluta("Filippo"));
 
 // Esercizio 9.5
 // Scrivi una funzione once che accetti una funzione fn e restituisca una nuova funzione che può essere chiamata al massimo una volta. Le chiamate successive devono restituire il risultato della prima chiamata.
