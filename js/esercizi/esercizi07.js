@@ -289,6 +289,14 @@ console.log(studentiMedia);
 
 // Esercizio 7.19
 // Dato un array di frasi (stringhe), usa flatMap per ottenere un array di tutte le singole parole, tutte in minuscolo.
+console.log("Esercizio 7.19");
+
+let frasi = ["Ciao mondo", "JavaScript è utile", "Gli array sono comodi"];
+
+let paroleMinuscole = frasi.flatMap((frase) => frase.toLowerCase().split(" "));
+
+console.log(paroleMinuscole);
+
 
 // Esercizio 7.20
 // Dato un array di numeri, usa reduce per creare un oggetto che separi i numeri in { pari: [...], dispari: [...] }.
