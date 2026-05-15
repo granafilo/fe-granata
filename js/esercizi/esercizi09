@@ -103,6 +103,15 @@ console.log(limiteTre(3));
 
 // Esercizio 9.7
 // Scrivi una funzione creaRange che accetti un minimo e un massimo, e restituisca una funzione che verifica se un numero è compreso nel range.
+console.log("Esercizio 9.7");
+
+const creaRange = (minimo, massimo) => {
+    return (numero) => numero >= minimo && numero <= massimo;
+};
+
+let nelRange = creaRange(10, 20);
+console.log(nelRange(15));
+console.log(nelRange(25));
 
 // Esercizio 9.8
 // Scrivi una funzione memoize che accetti una funzione e restituisca una versione "memorizzata" di essa. Se la funzione viene chiamata con gli stessi argomenti, deve restituire il risultato precedente senza rieseguire il calcolo.
