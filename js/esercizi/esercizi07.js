@@ -339,6 +339,29 @@ console.log(parolaPiuFreq);
 
 // Esercizio 7.23
 // Dato un array di oggetti { studente, materia, voto }, usa reduce per creare un oggetto dove ogni studente ha un array dei suoi voti raggruppati per materia.
+console.log("Esercizio 7.23");
+
+let votiMateria = [
+    { studente: "Anna", materia: "matematica", voto: 8 },
+    { studente: "Anna", materia: "italiano", voto: 7 },
+    { studente: "Luca", materia: "matematica", voto: 6 },
+    { studente: "Anna", materia: "matematica", voto: 9 },
+    { studente: "Luca", materia: "italiano", voto: 8 }
+];
+
+let votiStudenti = votiMateria.reduce((acc, item) => {
+    if (!acc[item.studente]) {
+        acc[item.studente] = {};
+    }
+    if (!acc[item.studente][item.materia]) {
+        acc[item.studente][item.materia] = [];
+    }
+    acc[item.studente][item.materia].push(item.voto);
+    return acc;
+}, {});
+
+console.log(votiStudenti);
+
 
 // Esercizio 7.24
 // Scrivi una funzione che accetti un array e una funzione di raggruppamento, e restituisca un oggetto con gli elementi raggruppati (implementa una versione generica di groupBy).
