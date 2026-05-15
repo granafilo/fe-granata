@@ -424,6 +424,18 @@ console.log(prodottiFinali);
 
 // Esercizio 7.27
 // Dato un array di numeri, usa reduce per calcolare la varianza. La varianza è la media dei quadrati delle differenze dalla media.
+console.log("Esercizio 7.27");
+
+let numeriVarianza = numbers.slice(0, 10);
+
+let mediaNumeri = numeriVarianza.reduce((somma, num) => somma + num, 0) / numeriVarianza.length;
+
+let varianza = numeriVarianza.reduce((somma, num) => {
+    return somma + Math.pow(num - mediaNumeri, 2);
+}, 0) / numeriVarianza.length;
+
+console.log(varianza);
+
 
 // Esercizio 7.28
 // Dato un array di parole, usa i metodi degli array per creare un indice: un oggetto dove ogni lettera dell'alfabeto è una chiave e il valore è un array di parole che iniziano con quella lettera.
