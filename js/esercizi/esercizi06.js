@@ -330,19 +330,19 @@ let rubrica = {
     aggiungiContatto: function (contatto) {
         this.contatti.unshift(contatto);
     },
-    rimuoviContatto: function(contatto){
-        for(let i in this.contatti){
-            if(this.contatti[i] == contatto){
+    rimuoviContatto: function (contatto) {
+        for (let i in this.contatti) {
+            if (this.contatti[i] == contatto) {
                 console.log("contatto uguale", i);
                 this.contatti.splice(i, 1);
                 console.log(this.contatti);
-                
+
             }
         }
     },
-    cercaPerNome: function(nome, cognome){
-        for(let i in this.contatti){
-            if(this.contatti[i].nome == nome && this.contatti[i].cognome == cognome){
+    cercaPerNome: function (nome, cognome) {
+        for (let i in this.contatti) {
+            if (this.contatti[i].nome == nome && this.contatti[i].cognome == cognome) {
                 console.log("Contatto trovato");
                 console.log(this.contatti[i]);
                 return this.contatti[i];
@@ -350,9 +350,9 @@ let rubrica = {
         }
         console.log("Contatto non trovato");
     },
-    cercaPerTelefono: function(tel){
-        for(let i in this.contatti){
-            if(this.contatti[i].telefono == tel){
+    cercaPerTelefono: function (tel) {
+        for (let i in this.contatti) {
+            if (this.contatti[i].telefono == tel) {
                 console.log("Contatto trovato");
                 console.log(this.contatti[i]);
                 return this.contatti[i];
@@ -360,8 +360,8 @@ let rubrica = {
         }
         console.log("Contatto non trovato");
     },
-    mostraTutti: function(){
-        console.log("\nRubrica: ", this.contatti);   
+    mostraTutti: function () {
+        console.log("\nRubrica: ", this.contatti);
     }
 
 };
