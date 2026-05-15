@@ -374,3 +374,42 @@ console.log(rateLimiter());
 
 // Esercizio 9.20
 // Scrivi una funzione creaStateMachine che accetti un oggetto che descrive gli stati e le transizioni possibili, e un stato iniziale. Restituisce un oggetto con stato() (restituisce lo stato corrente) e transizione(azione) (cambia stato secondo le regole). Se la transizione non è valida, lo stato non cambia.
+console.log("Esercizio 9.20");
+
+const creaStateMachine = (stati, statoIniziale) => {
+    let statoCorrente = statoIniziale;
+
+    return {
+        stato: function () {
+            return statoCorrente;
+        },
+        transizione: function (azione) {
+            let prossimoStato = stati[statoCorrente] && stati[statoCorrente][azione];
+
+            if (prossimoStato) {
+                statoCorrente = prossimoStato;
+            }
+
+            return statoCorrente;
+        }
+    };
+};
+
+let macchinaStati = creaStateMachine({
+    fermo: {
+        avvia: "in_corso"
+    },
+    in_corso: {
+        pausa: "in_pausa",
+        termina: "fermo"
+    },
+    in_pausa: {
+        riprendi: "in_corso",
+        termina: "fermo"
+    }
+}, "fermo");
+
+console.log(macchinaStati.stato());
+console.log(macchinaStati.transizione("avvia"));
+console.log(macchinaStati.transizione("pausa"));
+console.log(macchinaStati.transizione("riprendi"));
