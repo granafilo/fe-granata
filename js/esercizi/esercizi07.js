@@ -401,6 +401,27 @@ console.log(dateMarzo);
 // Filtri i prodotti con prezzo scontato > 10
 // Ordini per prezzo scontato crescente
 // Restituisca un array di stringhe "prodotto: €prezzo"
+console.log("Esercizio 7.26");
+
+let prodottiSconto = [
+    { prodotto: "Libro", prezzo: 25, sconto: 20 },
+    { prodotto: "Penna", prezzo: 5, sconto: 0 },
+    { prodotto: "Zaino", prezzo: 60, sconto: 30 },
+    { prodotto: "Mouse", prezzo: 20, sconto: 10 }
+];
+
+let prodottiFinali = prodottiSconto
+    .map((prodotto) => ({
+        ...prodotto,
+        prezzoScontato: prodotto.prezzo - (prodotto.prezzo * prodotto.sconto / 100)
+    }))
+    .filter((prodotto) => prodotto.prezzoScontato > 10)
+    .sort((a, b) => a.prezzoScontato - b.prezzoScontato)
+    .map((prodotto) => `${prodotto.prodotto}: €${prodotto.prezzoScontato}`);
+
+console.log(prodottiFinali);
+
+
 // Esercizio 7.27
 // Dato un array di numeri, usa reduce per calcolare la varianza. La varianza è la media dei quadrati delle differenze dalla media.
 
