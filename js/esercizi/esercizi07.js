@@ -478,3 +478,25 @@ console.log(zip([1, 2, 3], ["a", "b", "c"]));
 // Per ogni utente conti il numero totale di azioni
 // Ordini gli utenti per numero di azioni (dal più attivo al meno attivo)
 // Restituisca un array di oggetti { utente, totaleAzioni }
+console.log("Esercizio 7.30");
+
+let logAccessi = [
+    { utente: "Fil", data: "2024-03-01", azione: "login" },
+    { utente: "Anna", data: "2024-03-01", azione: "logout" },
+    { utente: "Fil", data: "2024-03-02", azione: "click" },
+    { utente: "Luca", data: "2024-03-02", azione: "login" },
+    { utente: "Fil", data: "2024-03-03", azione: "logout" },
+    { utente: "Anna", data: "2024-03-04", azione: "click" }
+];
+
+let riepilogoLog = Object.entries(logAccessi.reduce((acc, log) => {
+    if (!acc[log.utente]) {
+        acc[log.utente] = 0;
+    }
+    acc[log.utente] += 1;
+    return acc;
+}, {}))
+    .map(([utente, totaleAzioni]) => ({ utente, totaleAzioni }))
+    .sort((a, b) => b.totaleAzioni - a.totaleAzioni);
+
+console.log(riepilogoLog);
