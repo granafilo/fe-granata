@@ -383,6 +383,16 @@ console.log(raggruppaPer(numbers.slice(0, 20), (num) => num % 2 === 0 ? "pari" :
 
 // Esercizio 7.25
 // Dato un array di date (come stringhe "YYYY-MM-DD"), usa filter per ottenere solo le date di un mese specifico, poi ordinale dalla più recente alla più vecchia.
+console.log("Esercizio 7.25");
+
+let dateLista = ["2024-03-01", "2024-03-15", "2024-04-10", "2024-03-22", "2024-05-02"];
+
+let dateMarzo = dateLista
+    .filter((data) => data.slice(5, 7) === "03")
+    .sort((a, b) => new Date(b) - new Date(a));
+
+console.log(dateMarzo);
+
 
 // Esercizio 7.26
 // Dato un array di oggetti { prodotto, prezzo, sconto }, scrivi una pipeline che:
