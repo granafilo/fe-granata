@@ -313,6 +313,7 @@ let pariDispari = numbers.slice(0, 20).reduce((acc, num) => {
 
 console.log(pariDispari);
 
+
 // Esercizio 7.21
 // Dato un array di oggetti { nome, eta }, usa sort e slice per ottenere i 3 più anziani.
 console.log("Esercizio 7.21");
@@ -321,8 +322,20 @@ let topEta = persone.slice().sort((a, b) => b.eta - a.eta).slice(0, 3);
 
 console.log(topEta);
 
+
 // Esercizio 7.22
 // Dato un array di stringhe, usa i metodi degli array per trovare la parola che appare più frequentemente.
+console.log("Esercizio 7.22");
+
+let parole = ["casa", "mare", "casa", "sole", "mare", "casa", "luna"];
+
+let parolaPiuFreq = Object.entries(parole.reduce((acc, parola) => {
+    acc[parola] = (acc[parola] || 0) + 1;
+    return acc;
+}, {})).sort((a, b) => b[1] - a[1])[0][0];
+
+console.log(parolaPiuFreq);
+
 
 // Esercizio 7.23
 // Dato un array di oggetti { studente, materia, voto }, usa reduce per creare un oggetto dove ogni studente ha un array dei suoi voti raggruppati per materia.
