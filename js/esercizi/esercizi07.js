@@ -315,6 +315,11 @@ console.log(pariDispari);
 
 // Esercizio 7.21
 // Dato un array di oggetti { nome, eta }, usa sort e slice per ottenere i 3 più anziani.
+console.log("Esercizio 7.21");
+
+let topEta = persone.slice().sort((a, b) => b.eta - a.eta).slice(0, 3);
+
+console.log(topEta);
 
 // Esercizio 7.22
 // Dato un array di stringhe, usa i metodi degli array per trovare la parola che appare più frequentemente.
