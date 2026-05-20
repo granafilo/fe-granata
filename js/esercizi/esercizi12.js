@@ -75,3 +75,16 @@ const printResultAwait = async (lancioD) => {
 
 // printResultAwait(lancioDado2);
 
+// Esercizio 12.5
+// Scrivi una funzione asincrona che simuli tre lanci di dado in sequenza (ciascuno dopo 1 secondo) e restituisca la somma dei tre lanci.
+
+const lancioTriplo = async (func) => {
+    let count = 0;
+    while (count < 3) {
+        console.log(await func());
+        count++;
+    }
+};
+
+// lancioTriplo(lancioDado2);
+
