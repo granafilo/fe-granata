@@ -88,3 +88,23 @@ const lancioTriplo = async (func) => {
 
 // lancioTriplo(lancioDado2);
 
+// Esercizio 12.6
+// Scrivi una funzione asincrona che simuli tre lanci di dado in parallelo e restituisca un array con i tre risultati.
+
+const lancioTriploParallelo = async (func) => {
+    let result = [];
+
+    const promesse = [func(), func(), func()];
+
+    result = await Promise.all(promesse);
+
+    return result;
+};
+
+
+const avvio = async (func) => {
+    console.log("Result", await lancioTriploParallelo(func));
+};
+
+avvio(lancioDado2);
+
