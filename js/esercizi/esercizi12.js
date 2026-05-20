@@ -44,3 +44,24 @@ const mostraRisultato = (numero) => {
 lancioDado(mostraRisultato);
 
 
+// Esercizio 12.3
+// Riscrivi l'esercizio precedente (il dado) usando una Promise al posto della callback.
+
+const lancioDado2 = () => {
+    return new Promise((resolve) => {
+        setTimeout(() => {
+            let numero = Math.floor(Math.random() * 6) + 1;
+            resolve(numero);
+        }, 1000);
+    })
+};
+
+const printResult =(lancioD) => {
+    lancioD().then((numero) => {
+        console.log(numero);
+    }).catch((err) => {
+        throw new Error("Errore nel lancio del dado");
+    });
+};
+
+printResult(lancioDado2);
