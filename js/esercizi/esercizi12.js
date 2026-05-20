@@ -41,7 +41,7 @@ const mostraRisultato = (numero) => {
     console.log(numero);
 };
 
-lancioDado(mostraRisultato);
+// lancioDado(mostraRisultato);
 
 
 // Esercizio 12.3
@@ -56,7 +56,7 @@ const lancioDado2 = () => {
     })
 };
 
-const printResult =(lancioD) => {
+const printResult = (lancioD) => {
     lancioD().then((numero) => {
         console.log(numero);
     }).catch((err) => {
@@ -64,4 +64,14 @@ const printResult =(lancioD) => {
     });
 };
 
-printResult(lancioDado2);
+// printResult(lancioDado2);
+
+// Esercizio 12.4
+// Riscrivi l'esercizio del dado usando async/await.
+
+const printResultAwait = async (lancioD) => {
+    console.log(await lancioD());
+};
+
+// printResultAwait(lancioDado2);
+
