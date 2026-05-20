@@ -25,3 +25,22 @@ const itera = async (numIterazione, func, millis) => {
 itera(3, attendi, 1000);
 */
 
+// Esercizio 12.2
+// Scrivi una funzione che simuli il lancio di un dado usando setTimeout e una callback. La callback deve ricevere un numero casuale da 1 a 6 dopo 1 secondo.
+
+const lancioDado = (callback) => {
+    setTimeout(() => {
+        let numero = Math.floor(Math.random() * 6) + 1
+        // console.log(numero);
+
+        callback(numero);
+    }, 1000);
+};
+
+const mostraRisultato = (numero) => {
+    console.log(numero);
+};
+
+lancioDado(mostraRisultato);
+
+
